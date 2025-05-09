@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
 
                     <div className="  ">
                         <div className="max-w-[478px]">
-                            <p className="text-[#000000] text-lg leading-6">
+                            <p className="text-[#000000] text-end text-lg leading-6">
                                 Vocalfy boosts your career with the best vocals. We have unique and special singers, top song-writers, producers and professional recording studios to ensure you get the vocal you’ve been looking for.
                             </p>
                         </div>
