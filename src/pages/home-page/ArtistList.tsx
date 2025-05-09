@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react'
 import { FaArrowRight } from 'react-icons/fa';
 
-const ArtistList = () => {
+const ArtistList : React.FC = () => {
     interface SingerInterface {
         image: string;
         name: string;
