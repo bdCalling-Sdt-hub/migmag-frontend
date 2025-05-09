@@ -5,7 +5,7 @@ import React, { useRef, useState } from 'react';
 import { CiPause1 } from 'react-icons/ci';
 import { FaPlay } from 'react-icons/fa';
 
-const TopTenVocal : React.FC = () => {
+const TopTenVocal: React.FC = () => {
     interface AudioItem {
         id: number;
         title: string;
@@ -87,11 +87,11 @@ const TopTenVocal : React.FC = () => {
             </div>
             <div>
                 <div className=" grid md:grid-cols-2 grid-cols-1 lg:gap-x-7 gap-x-3 ">
-                    {audioData.map((item, i) => (
+                    {audioData.slice(0, 4).map((item, i) => (
                         <div
                             key={item.id}
                             className={`:h-32 flex flex-col gap-y-2 lg:py-2  py-3 lg:flex-row items-center px-10 justify-between border border-black my-2 rounded-lg max-w-[713px] transition-all duration-300
-                          ${playingUrl === item.audio && isPlaying
+                            ${playingUrl === item.audio && isPlaying
                                     ? 'bg-black'
                                     : i % 2 === 0
                                         ? 'bg-[#F1F1F1]  '
