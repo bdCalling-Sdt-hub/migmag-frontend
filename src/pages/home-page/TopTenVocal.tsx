@@ -5,7 +5,7 @@ import React, { useRef, useState } from 'react';
 import { CiPause1 } from 'react-icons/ci';
 import { FaPlay } from 'react-icons/fa';
 
-const TopTenVocal = () => {
+const TopTenVocal : React.FC = () => {
     interface AudioItem {
         id: number;
         title: string;
@@ -139,7 +139,7 @@ const TopTenVocal = () => {
                         <h1 className=' text-black font-thin text-lg leading-6 mb-6 lg:mb-[69px] mx-auto ' >Our bi-weekly top-10 list features the popular artists coming up in our network, great for club nights and gigs to artist signings.</h1>
                     </div>
                     <div>
-                        <Link href="/all-artist" >
+                        <Link href="/all-vocal-musick" >
                             <button className=" bg-black border border-white font-thin w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer mb-10 ">
                                 SEE ALL
                             </button>

@@ -8,7 +8,7 @@ import Footer from '@/components/footer/Footer'
 import VocalPublish from './VocalPublish'
 import Coverd from './Coverd'
 
-const HomePage = () => {
+const HomePage : React.FC = () => {
     return (
         <div>
             <div>

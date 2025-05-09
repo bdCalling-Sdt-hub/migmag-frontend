@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const Coverd = () => {
+const Coverd : React.FC = () => {
 
     return (
         <div className=' max-w-[1539px] mx-auto px-4 mt-10 lg:mt-[91px]  ' >

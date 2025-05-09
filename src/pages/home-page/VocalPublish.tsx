@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react'
 
-const VocalPublish = () => {
+const VocalPublish : React.FC = () => {
   interface VocalInt {
     image: string;
   };
