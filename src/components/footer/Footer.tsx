@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
                         </div>
                         <div className="mt-6">
                             <Link href="/register">
-                                <button className="w-[194px] rounded-2xl border border-[#000000] text-[#000000] text-lg py-1.5">
+                                <button className="w-[194px] rounded-2xl border border-[#000000] text-[#000000] text-lg py-1.5 cursor-pointer ">
                                     REGISTER
                                 </button>
                             </Link>
