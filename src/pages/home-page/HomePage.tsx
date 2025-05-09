@@ -6,6 +6,7 @@ import TopTenVocal from './TopTenVocal'
 import ArtistList from './ArtistList'
 import Footer from '@/components/footer/Footer'
 import VocalPublish from './VocalPublish'
+import Coverd from './Coverd'
 
 const HomePage = () => {
     return (
@@ -24,6 +25,9 @@ const HomePage = () => {
                 </div>
                 <div>
                     <VocalPublish></VocalPublish>
+                </div>
+                <div>
+                    <Coverd></Coverd>
                 </div>
                 <Footer></Footer>
             </div>

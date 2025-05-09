@@ -142,6 +142,13 @@ const VocalPublish = () => {
         </div>
       </div>
 
+
+      <div className="bg-[url('/images/home-page/vocal-publish/publishBg.png')] bg-no-repeat bg-cover bg-center  h-[65vh] lg:mt-[110px] md:mt-20 mt-8  w-full" >
+
+      </div>
+
+
+
     </>
   )
 }
