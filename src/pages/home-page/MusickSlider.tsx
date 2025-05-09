@@ -152,13 +152,13 @@ export default function MusickSlider() {
                     </div>
                 ))}
             </div>
-            <div className=' max-w-[1539px] mx-auto px-4 flex flex-col lg:flex-row justify-between items-center   ' >
+            <div className=' max-w-[1539px] mx-auto  flex flex-col lg:flex-row justify-between items-center   ' >
                 <div className=' max-w-[600px] lg:mt-[68px] mt-5 ' >
                     <h1 className=' text-[#000000] text-lg leading-6 ' >Check out some of the most latest trending vocals coming up in network, great for club nights and gigs to artist signings.</h1>
                 </div>
-                <div className="mt-4 md:mt-12">
-                    <Link href="/" passHref>
-                        <button className="bg-[#000000] w-[194px] text-white py-2 rounded-2xl lg:text-lg">
+                <div className="mt-4 md:mt-12 cursor-pointer ">
+                    <Link href="/all-vocal" >
+                        <button className="bg-[#000000] w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer  ">
                             BROWSE VOCALS
                         </button>
                     </Link>
