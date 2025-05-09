@@ -5,6 +5,7 @@ import MusickSlider from './MusickSlider'
 import TopTenVocal from './TopTenVocal'
 import ArtistList from './ArtistList'
 import Footer from '@/components/footer/Footer'
+import VocalPublish from './VocalPublish'
 
 const HomePage = () => {
     return (
@@ -20,6 +21,9 @@ const HomePage = () => {
                 </div>
                 <div className='  ' >
                     <ArtistList></ArtistList>
+                </div>
+                <div>
+                    <VocalPublish></VocalPublish>
                 </div>
                 <Footer></Footer>
             </div>
