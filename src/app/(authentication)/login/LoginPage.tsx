@@ -8,10 +8,8 @@ import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
 const LoginPage: React.FC = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
-        name: "",
         email: "",
         password: "",
-        confirmPassword: "",
         terms: false,
     });
 
@@ -29,12 +27,10 @@ const LoginPage: React.FC = () => {
             alert("Please accept the Terms and Conditions.");
             return;
         }
-        if (formData.password !== formData.confirmPassword) {
-            alert("Passwords do not match.");
-            return;
-        }
+        
         console.log("Form Data Submitted:", formData);
     };
+    
     return (
         <div className=' max-w-[1539px] mx-auto px-4 pb-10 lg:pb-[200px] ' >
             <div className=' flex lg:flex-row flex-col justify-between items-center ' >
