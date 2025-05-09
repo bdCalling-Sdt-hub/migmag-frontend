@@ -1,10 +1,11 @@
 "use client"
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 
 const OtpVerifyPage: React.FC = () => {
     const [otp, setOtp] = useState(new Array(6).fill(""));
-
+    const router = useRouter()
     const handleChange = (element, index) => {
         if (isNaN(element.value)) return;
         setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
@@ -16,6 +17,7 @@ const OtpVerifyPage: React.FC = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert(`Entered OTP is: ${otp.join("")}`);
+        router.push("/set-new-password")
     };
     return (
         <div className=' max-w-[1539px] mx-auto px-4 h-screen ' >
