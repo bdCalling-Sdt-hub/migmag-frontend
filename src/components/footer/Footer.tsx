@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 <div className="text-black border border-[#000000] "></div>
 
                 {/* Newsletter and Description */}
-                <div className="mt-12 flex flex-col lg:flex-row justify-between gap-10">
+                <div className="mt-12 flex flex-col lg:flex-row justify-between  gap-10">
                     <div>
                         <h1 className="font-bold text-3xl lg:text-[35px] leading-9 text-[#000000]">Sign-up to our newsletter</h1>
                         <div className="max-w-[478px] mt-4">
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="flex-1">
+                    <div className=" flex ">
                         <div className="max-w-[478px]">
                             <p className="text-[#000000] text-lg leading-6">
                                 Vocalfy boosts your career with the best vocals. We have unique and special singers, top song-writers, producers and professional recording studios to ensure you get the vocal you’ve been looking for.
