@@ -76,21 +76,27 @@ const TopTenVocal: React.FC = () => {
         <div className="max-w-[1539px] mx-auto">
             <div className="border border-black"></div>
             <div className="mt-7">
-                {/* <div className="flex justify-center items-start h-screen">
-                    <p className="text-center leading-loose">
-                        OUR<br />
-                        TOP<br />
-                        10<br />
+
+            </div>
+            <div className=' xl:hidden block ' >
+                <p className='text-[#000000] text-lg ' >OUR TOP 10 VOCALS</p>
+            </div>
+            <div className=' flex flex-row  xl:gap-13 justify-between      ' >
+                <div className="xl:block hidden mt-[10.5%]  w-[2%]  ">
+                    <p className="-rotate-90 text-[#000000] text-lg  whitespace-nowrap">
+                        OUR
+                        TOP
+                        10
                         VOCALS
                     </p>
-                </div> */}
-            </div>
-            <div>
-                <div className=" grid md:grid-cols-2 grid-cols-1 lg:gap-x-7 gap-x-3 ">
+                </div>
+
+                <div className=" grid md:grid-cols-2 grid-cols-1 lg:gap-x-7 gap-x-3 order w-[95%]  flex-1  ">
                     {audioData.slice(0, 4).map((item, i) => (
                         <div
                             key={item.id}
-                            className={`:h-32 flex flex-col gap-y-2 lg:py-2  py-3 lg:flex-row items-center px-10 justify-between border border-black my-2 rounded-lg max-w-[713px] transition-all duration-300
+                            className={`:h-32 flex flex-col gap-y-2 lg:py-2  py-3 lg:flex-row items-center px-10 justify-between border 
+                                -black my-2 rounded-lg max-w-[713px] transition-all duration-300
                             ${playingUrl === item.audio && isPlaying
                                     ? 'bg-black'
                                     : i % 2 === 0
@@ -132,22 +138,23 @@ const TopTenVocal: React.FC = () => {
                         </div>
                     ))}
                 </div>
+            </div>
 
 
-                <div className=' flex lg:flex-row flex-col mx-auto justify-between items-center mt-5 ' >
-                    <div className=' max-w-[562px] ' >
-                        <h1 className=' text-black font-thin text-lg leading-6 mb-6 lg:mb-[69px] mx-auto ' >Our bi-weekly top-10 list features the popular artists coming up in our network, great for club nights and gigs to artist signings.</h1>
-                    </div>
-                    <div>
-                        <Link href="/all-vocal-musick" >
-                            <button className=" bg-black border border-white font-thin w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer mb-10 ">
-                                SEE ALL
-                            </button>
-                        </Link>
-                    </div>
+            <div className=' flex lg:flex-row flex-col mx-auto justify-between items-center mt-5 ' >
+                <div className=' max-w-[562px] ' >
+                    <h1 className=' text-black font-thin text-lg leading-6 mb-6 lg:mb-[69px] mx-auto ' >Our bi-weekly top-10 list features the popular artists coming up in our network, great for club nights and gigs to artist signings.</h1>
+                </div>
+                <div>
+                    <Link href="/all-vocal-musick" >
+                        <button className=" bg-black border border-white font-thin w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer mb-10 ">
+                            SEE ALL
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
+
     );
 };
 

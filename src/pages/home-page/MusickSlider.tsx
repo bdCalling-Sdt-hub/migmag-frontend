@@ -6,6 +6,7 @@ import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import { CiPause1 } from 'react-icons/ci';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface AudioItem {
     id: number;
@@ -92,26 +93,39 @@ export default function MusickSlider() {
                 slides: { perView: 3, spacing: 15 }, // Adjust for smaller screens
             },
             '(min-width: 1024px)': {
-                slides: { perView: 5, spacing: 20 }, // Adjust for medium screens
+                slides: { perView: 6, spacing: 0 }, // Adjust for medium screens
             },
         },
     });
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    // Handle button click to open modal and play music
+    const handleTogglePlay = (url) => {
+        setIsModalOpen(true);
 
-    const handleTogglePlay = (url: string) => {
-        if (playingUrl === url && isPlaying) {
-            audioRef.current?.pause();
+        if (audioRef.current) {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;
+        }
+
+        audioRef.current = new Audio(url);
+        audioRef.current.play();
+        setIsPlaying(true);
+
+        audioRef.current.onended = () => {
             setIsPlaying(false);
-        } else {
-            if (audioRef.current) {
-                audioRef.current.pause();
-            }
-            const audio = new Audio(url);
-            audioRef.current = audio;
-            audio.play();
-            setPlayingUrl(url);
-            setIsPlaying(true);
+            setIsModalOpen(false);
+        };
+    };
+
+    // Handle pause and close modal
+    const handlePause = () => {
+        if (audioRef.current) {
+            audioRef.current.pause();
+            setIsPlaying(false);
+            setIsModalOpen(false);
         }
     };
+
 
     return (
         <main className="lg:mt-32 mt-8 ">
@@ -154,7 +168,7 @@ export default function MusickSlider() {
             </div>
             <div className=' max-w-[1539px] mx-auto  flex flex-col lg:flex-row justify-between items-center   ' >
                 <div className=' max-w-[600px] lg:mt-[68px] mt-5 ' >
-                    <h1 className=' text-[#000000] text-lg leading-6 ' >Check out some of the most latest trending vocals coming up in network, great for club nights and gigs to artist signings.</h1>
+                    <h1 className=' text-[#000000] text-lg leading-6 px-4 ' >Check out some of the most latest trending vocals coming up in network, great for club nights and gigs to artist signings.</h1>
                 </div>
                 <div className="mt-4 md:mt-12 cursor-pointer ">
                     <Link href="/all-vocal" >
@@ -164,6 +178,29 @@ export default function MusickSlider() {
                     </Link>
                 </div>
             </div>
+            {isModalOpen && (
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50"
+                >
+                    <div className="bg-white p-5 rounded-lg w-[500px] relative shadow-lg">
+                        <h2 className="text-xl font-bold mb-4">Now Playing</h2>
+                        <p className="text-gray-600 mb-4">{item.title}</p>
+                        <audio ref={audioRef} controls autoPlay className="w-full">
+                            <source src={item.audio} type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                        <button
+                            onClick={handlePause}
+                            className="bg-red-500 text-white px-4 py-2 rounded mt-5 hover:bg-red-600 transition-all duration-300"
+                        >
+                            Stop & Close
+                        </button>
+                    </div>
+                </motion.div>
+            )}
         </main>
     );
 }
