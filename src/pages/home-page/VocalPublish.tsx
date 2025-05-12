@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react'
 
-const VocalPublish : React.FC = () => {
+const VocalPublish: React.FC = () => {
   interface VocalInt {
     image: string;
   };
@@ -45,13 +45,17 @@ const VocalPublish : React.FC = () => {
         </div>
 
       </div>
+      <div>
+
+      </div>
       <div className=' max-w-[1539px] mx-auto flex flex-col  lg:flex-row  gap-x-14 lg:mt-[110px] md:mt-20 px-4 ' >
+
         {/* left section  */}
         <div className='  ' >
           <Image src={"/images/home-page/vocal-publish/p-2.png"} className=' object-cover rounded-lg mx-auto ' width={661} height={691} alt='....' />
         </div>
         {/* right section  */}
-        <div className=' lg:-mt-1 mt-4 ' >
+        <div className=' lg:-mt-1 mt-4   ' >
           <div className=' max-w-[441px] ' >
             <h1 className=' text-2xl lg:text-[35px] font-bold leading-9 ' >Discover vocal that match your tastes</h1>
           </div>
@@ -136,9 +140,29 @@ const VocalPublish : React.FC = () => {
         </div>
       </div>
 
+      {/* <div className="max-w-[1539px]  mx-auto px-4 mt-10 lg:mt-[139px]  items-start gap-6 lg:gap-12">
+        <p className=" lg:hidden lg:text-lg mb-2  font-thin ">
+          WHAT OUR USERS SAY
+        </p>
+        <div className=' max-w-[1146px] flex flex-col lg:flex-row justify-start ' >
+          <div className="relative hidden lg:block lg:w-[150px] lg:h-[250px] flex flex-row items-center justify-start">
+            <p className="absolute -rotate-90 text-lg mt-[35%] font-thin tracking-wide whitespace-nowrap">
+              WHAT OUR USERS SAY
+            </p>
+          </div>
+
+          <div className="flex-1">
+            <h1 className="lg:text-[60px] md:text-5xl text-3xl font-thin leading-tight">
+              “LOVE TUNEM - GREAT CHOICE AND  EVEN BETTER SERVICE”
+            </h1>
+            <p className="mt-2 text-lg font-medium text-gray-600">Simon Godard, London</p>
+          </div>
+        </div>
+      </div> */}
       <div className='max-w-[1539px] mx-auto px-4 ' >
-        <div className=' max-w-[1052px] ' >
-          <h1 className=' lg:text-[100px] md:text-4xl text-2xl font-thin lg:mt-32 md:20 mt-7 ' >“LOVE TUNEM - GREAT CHOIC " </h1>
+        <div className=' maw-w-[1116px]  ' >
+          <h1 className=' lg:text-[90px] md:text-4xl text-2xl font-thin lg:mt-32 md:20 mt-7 ' >“LOVE TUNEM - GREAT CHOICE AND  EVEN BETTER SERVICE” </h1>
+          <p className="mt-2 text-lg font-medium text-gray-600">Simon Godard, London</p>
         </div>
       </div>
 
@@ -154,3 +178,5 @@ const VocalPublish : React.FC = () => {
 }
 
 export default VocalPublish
+
+
