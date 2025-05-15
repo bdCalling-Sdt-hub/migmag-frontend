@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 
-const Navbar = () => {
+const Navbar : React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
     const pathname = usePathname()
 
@@ -62,7 +62,7 @@ const Navbar = () => {
                 {/* Desktop Navigation */}
                 <nav className="hidden lg:flex flex-row items-center gap-x-12">
                     <ul className="flex items-center gap-x-8 text-lg">
-                        <li><Link className='text-black' href="">Browse Vocals</Link></li>
+                        <li><Link className='text-black' href="/browse-vocal">Browse Vocals</Link></li>
                         <li><Link className='text-black' href="">Artist Library</Link></li>
                         <li><Link className='text-black' href="">Hire</Link></li>
                     </ul>
