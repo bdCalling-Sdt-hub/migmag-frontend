@@ -109,7 +109,7 @@ const RegisterFrom: React.FC = () => {
                                     className="w-full py-3 placeholder:text-[#3A3A3A] placeholder:text-[16px] px-10 rounded-lg border-none bg-[#F5F5F5] focus:outline-none"
                                 />
                                 <div
-                                    className="absolute right-3 top-3 cursor-pointer"
+                                    className="absolute right-3 top-[42] cursor-pointer"
                                     onClick={() => setShowPassword(!showPassword)}
                                 >
                                     {showPassword ? <AiOutlineEyeInvisible className=' mt-1 text-lg ' /> : <AiOutlineEye className=' mt-1 text-lg ' />}
@@ -134,7 +134,7 @@ const RegisterFrom: React.FC = () => {
                                     className="w-full py-3 placeholder:text-[#3A3A3A] placeholder:text-[16px] px-10 rounded-lg border-none bg-[#F5F5F5] focus:outline-none"
                                 />
                                 <div
-                                    className="absolute right-3 top-3 cursor-pointer"
+                                    className="absolute right-3 top-[42] cursor-pointer"
                                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                                 >
                                     {showConfirmPassword ? <AiOutlineEyeInvisible className=' mt-1 text-lg ' /> : <AiOutlineEye className=' mt-1 text-lg ' />}
