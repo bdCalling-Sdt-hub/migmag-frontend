@@ -6,10 +6,12 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 import BrowseVocalBanner from './BrowseVocalBanner'
 import BrowseVocalMarque from './BrowseVocalMarque'
+import ArtistLibraryBanner from '../artist-library/ArtistLibraryBanner'
 
 const page = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
-    const pathname = usePathname()
+    const pathname = usePathname();
+    console.log(pathname)
 
     const toggleDrawer = () => setDrawerOpen(!drawerOpen)
 
@@ -28,6 +30,7 @@ const page = () => {
     useEffect(() => {
         setDrawerOpen(false)
     }, [pathname])
+
     return (
         <div className=' bg-[#000000] ' >
             {/* navbar  */}
@@ -66,9 +69,16 @@ const page = () => {
                     {/* Desktop Navigation */}
                     <nav className="hidden lg:flex flex-row items-center gap-x-12">
                         <ul className="flex items-center gap-x-8 text-lg">
-                            <li><Link className='text-white' href="/browse-vocal">Browse Vocals</Link></li>
-                            <li><Link className='text-white' href="/artist-library">Artist Library</Link></li>
-                            <li><Link className='text-white' href="/hire">Hire</Link></li>
+                            <li>
+                                <Link
+                                    href="/browse-vocal"
+                                    className={` ${pathname === "/browse-vocal" ? "text-[#E7F056]  " : "text-white"}`}
+                                >
+                                    Browse Vocals
+                                </Link>
+                            </li>
+                            <li><Link className={` ${pathname === "/artist-library" ? "text-[#E7F056]  " : "text-white"}`} href="/artist-library">Artist Library</Link></li>
+                            <li><Link className={` ${pathname === "/hire" ? "text-[#E7F056]  " : "text-white"}`} href="/hire">Hire</Link></li>
                         </ul>
 
                         <div className="relative">
@@ -129,9 +139,16 @@ const page = () => {
                         </button>
                     </div>
                     <ul className="flex flex-col p-4 gap-4">
-                        <li><Link className='text-white' href="/browse-vocal">Browse Vocals</Link></li>
-                        <li><Link className=' text-white ' href="/artist-library">Artist Library</Link></li>
-                        <li><Link className=' text-white ' href="/hire">Hire</Link></li>
+                        <li>
+                            <Link
+                                href="/browse-vocal"
+                                className={` ${pathname === "/browse-vocal" ? "text-[#E7F056]  " : "text-white"}`}
+                            >
+                                Browse Vocals
+                            </Link>
+                        </li>
+                        <li><Link className={` ${pathname === "/artist-library" ? "text-[#E7F056]  " : "text-white"}`} href="/artist-library">Artist Library</Link></li>
+                        <li><Link className={` ${pathname === "/hire" ? "text-[#E7F056]  " : "text-white"}`} href="/hire">Hire</Link></li>
                         <li><Link className=' text-white ' href="/cart">Cart (0)</Link></li>
                         <li>
                             <button className="bg-white text-black px-6 py-2 rounded-full w-full">
@@ -145,6 +162,10 @@ const page = () => {
             <div className='max-w-[1549px] mx-auto px-4 ' >
                 <BrowseVocalBanner />
             </div>
+
+
+            
+
 
             {/* footer  */}
 
