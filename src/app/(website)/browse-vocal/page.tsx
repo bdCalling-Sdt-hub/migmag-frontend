@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation'
 import BrowseVocalBanner from './BrowseVocalBanner'
 import BrowseVocalMarque from './BrowseVocalMarque'
 import ArtistLibraryBanner from '../artist-library/ArtistLibraryBanner'
+import MusickSlider from '@/pages/home-page/MusickSlider'
+import BrowseMusickVocalSlider from './BrowseMusickVocalSlider';
 
 const page = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -181,6 +183,10 @@ const page = () => {
             </div>
             <div>
                 <BrowseVocalMarque/>
+            </div>
+
+            <div>
+                <BrowseMusickVocalSlider/>
             </div>
 
 

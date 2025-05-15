@@ -68,7 +68,7 @@ const audioData: AudioItem[] = [
 
 ];
 
-export default function MusickSlider() {
+export default function BrowseMusickVocalSlider() {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const [playingUrl, setPlayingUrl] = useState<string | null>(null);
     const [isPlaying, setIsPlaying] = useState<boolean>(false);
@@ -127,13 +127,12 @@ export default function MusickSlider() {
 
 
     return (
-        <main className="lg:mt-32 mt-8 ">
-            <h1 className="text-[#000000] lg:text-lg max-w-[1519px] mx-auto px-4  ">LATEST TRENDING</h1>
+        <main className=" ">
             <div ref={sliderRef} className="keen-slider relative lg:mt-9 mt-4  ">
                 {audioData.map((item) => (
                     <div
                         key={item.id}
-                        className="keen-slider__slide lg:w-[265px] w-full mx-auto px-4 lg:px-0 bg-white  flex-shrink-0"
+                        className="keen-slider__slide lg:w-[265px] w-full mx-auto px-4 lg:px-0   flex-shrink-0"
                     >
                         <Image
                             src={item.img}
@@ -165,19 +164,12 @@ export default function MusickSlider() {
                     </div>
                 ))}
             </div>
-            <div className=' max-w-[1539px] mx-auto  flex flex-col lg:flex-row justify-between items-center   ' >
-                <div className=' max-w-[600px] lg:mt-[68px] mt-5 ' >
-                    <h1 className=' text-[#000000] text-lg leading-6 px-4 ' >Check out some of the most latest trending vocals coming up in network, great for club nights and gigs to artist signings.</h1>
-                </div>
-                <div className="mt-4 md:mt-12 cursor-pointer ">
-                    <Link href="/all-vocal" >
-                        <button className="bg-[#000000] w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer  ">
-                            BROWSE VOCALS
-                        </button>
-                    </Link>
-                </div>
+
+            <div className=' max-w-[1539px] mx-auto ' >
+
             </div>
             
+
         </main>
     );
 }
