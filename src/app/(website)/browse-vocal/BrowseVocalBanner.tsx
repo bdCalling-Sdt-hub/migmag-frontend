@@ -3,7 +3,7 @@ import React from 'react'
 
 const BrowseVocalBanner = () => {
   return (
-    <div className=' h-screen ' >
+    <div className=' ' >
       <div className=' lg:mt-14 mt-6 flex flex-col lg:flex-row justify-between ' >
         {/* left side  */}
         <div className=' max-w-2xl text-white ' >

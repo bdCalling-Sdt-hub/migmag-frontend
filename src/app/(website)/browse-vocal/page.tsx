@@ -7,6 +7,8 @@ import { usePathname } from 'next/navigation'
 import BrowseVocalBanner from './BrowseVocalBanner'
 import BrowseVocalMarque from './BrowseVocalMarque'
 import ArtistLibraryBanner from '../artist-library/ArtistLibraryBanner'
+import MusickSlider from '@/pages/home-page/MusickSlider'
+import BrowseMusickVocalSlider from './BrowseMusickVocalSlider';
 
 const page = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -178,6 +180,13 @@ const page = () => {
             {/* browse vocal content  */}
             <div className='max-w-[1549px] mx-auto px-4 ' >
                 <BrowseVocalBanner />
+            </div>
+            <div>
+                <BrowseVocalMarque/>
+            </div>
+
+            <div>
+                <BrowseMusickVocalSlider/>
             </div>
 
 
