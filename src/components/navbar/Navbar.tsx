@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 
-const Navbar : React.FC = () => {
+const Navbar: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
     const pathname = usePathname()
 
@@ -29,7 +29,7 @@ const Navbar : React.FC = () => {
 
     return (
         <>
-            <div className='flex items-center justify-between h-16 max-w-[1549px] mx-auto px-4'>
+            <div className='flex items-center justify-between h-16 max-w-[1549px] pt-12 mx-auto px-4'>
                 {/* Logo */}
                 <Link href="/">
                     <svg width="174" height="22" viewBox="0 0 174 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,8 +63,8 @@ const Navbar : React.FC = () => {
                 <nav className="hidden lg:flex flex-row items-center gap-x-12">
                     <ul className="flex items-center gap-x-8 text-lg">
                         <li><Link className='text-black' href="/browse-vocal">Browse Vocals</Link></li>
-                        <li><Link className='text-black' href="">Artist Library</Link></li>
-                        <li><Link className='text-black' href="">Hire</Link></li>
+                        <li><Link className='text-black' href="/artist-library">Artist Library</Link></li>
+                        <li><Link className='text-black' href="/hire">Hire</Link></li>
                     </ul>
 
                     <div className="relative">
@@ -74,9 +74,9 @@ const Navbar : React.FC = () => {
                         </Link>
                     </div>
 
-                    <button className="bg-black text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:bg-gray-900">
+                    <Link href={"/login"}><button className="bg-black text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:bg-gray-900">
                         <Link href={"/login"}>Log in</Link>
-                    </button>
+                    </button></Link>
                 </nav>
             </div>
 
@@ -115,9 +115,9 @@ const Navbar : React.FC = () => {
                     </button>
                 </div>
                 <ul className="flex flex-col p-4 gap-4">
-                    <li><Link href="">Browse Vocals</Link></li>
-                    <li><Link href="">Artist Library</Link></li>
-                    <li><Link href="">Hire</Link></li>
+                    <li><Link href="/browse-vocal">Browse Vocals</Link></li>
+                    <li><Link href="/artist-library">Artist Library</Link></li>
+                    <li><Link href="/hire">Hire</Link></li>
                     <li><Link href="/cart">Cart (0)</Link></li>
                     <li><button className="bg-black text-white px-6 py-2 rounded-full w-full">Log in</button></li>
                 </ul>
