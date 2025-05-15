@@ -179,6 +179,9 @@ const page = () => {
             <div className='max-w-[1549px] mx-auto px-4 ' >
                 <BrowseVocalBanner />
             </div>
+            <div>
+                <BrowseVocalMarque/>
+            </div>
 
 
 
