@@ -141,12 +141,12 @@ export default function BrowseMusickVocalSlider() {
                             alt={item.title}
                             className="object-cover rounded-xl"
                         />
-                        <h3 className="lg:text-lg font-bold lg:mt-5 mt-3 ">{item.title}</h3>
-                        <p className=" text-[#504E4E] lg:text-lg font-bold  ">{item.name}</p>
-                        <p className="text-[#504E4E] lg:text-lg font-bold ">{item.price}</p>
+                        <h3 className="lg:text-lg font-bold lg:mt-5 mt-2 text-[#FFFFFF] ">{item.title}</h3>
+                        <p className="  lg:text-lg font-bold text-[#E7F056]  ">{item.name}</p>
+                        <p className="text-[#E7F056] lg:text-lg font-bold ">{item.price}</p>
                         <button
                             onClick={() => handleTogglePlay(item.audio)}
-                            className=" w-[50px] h-[50px] rounded-full bg-[#000000] flex justify-center items-center flex-col absolute top-1/3 lg:top-1/2 lg:translate-x-44 translate-x-24  "
+                            className=" w-[50px] h-[50px] rounded-full bg-[#000000] flex justify-center items-center flex-col absolute top-1/3 lg:top-1/2 lg:translate-x-44 translate-x-24 cursor-pointer  "
                         >
                             {playingUrl === item.audio && isPlaying ? <CiPause1 className=' text-[#E7F056] ' />
                                 : <><svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
