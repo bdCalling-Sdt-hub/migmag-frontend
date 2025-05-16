@@ -9,6 +9,7 @@ import BrowseVocalMarque from './BrowseVocalMarque'
 import ArtistLibraryBanner from '../artist-library/ArtistLibraryBanner'
 import MusickSlider from '@/pages/home-page/MusickSlider'
 import BrowseMusickVocalSlider from './BrowseMusickVocalSlider';
+import BrowseAllVocal from './BrowseAllVocal'
 
 const page = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -187,6 +188,9 @@ const page = () => {
 
             <div>
                 <BrowseMusickVocalSlider/>
+            </div>
+            <div className=' pb-12 ' >
+                <BrowseAllVocal/>
             </div>
 
 
