@@ -1044,7 +1044,7 @@ const BrowseAllVocal = () => {
                 </table>
             </div>
 
-            <div className=' hidden mt-14 mb-20 grid grid-cols-2 items-center ' >
+            <div className='  mt-14 mb-20 grid grid-cols-2 items-center ' >
                 <div>
                     <h1 className=' text-[#818080] text-lg ' >*New Vocals Added Monthly</h1>
                     <h1 className=' text-3xl text-[#E7F056] leading-9 font-thin ' >Notify me</h1>
@@ -1057,7 +1057,7 @@ const BrowseAllVocal = () => {
             </div>
 
 
-            <div className=' hidden flex  flex-row justify-between items-center  ' >
+            <div className='  flex  flex-row justify-between items-center  ' >
                 <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-14 rounded-md ' >
                     <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >100% Royalty free</h1>
                     <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
@@ -1081,7 +1081,7 @@ const BrowseAllVocal = () => {
 
 
 
-            <div className=' hidden flex lg:flex-row flex-col items-start justify-between relative gap-5 mt-40 ' >
+            <div className='  flex lg:flex-row flex-col items-start justify-between relative gap-5 mt-40 ' >
                 {/* left side  */}
                 <div>
                     <div className=' max-w-[411px] ' >
@@ -1133,6 +1133,11 @@ const BrowseAllVocal = () => {
                             </div>
                         </div>
                     </div>
+
+
+
+
+
                 </div>
                 {/* right side  */}
                 <div>
@@ -1142,7 +1147,7 @@ const BrowseAllVocal = () => {
 
 
             <div
-                className="hidden bg-[url('/images/home-page/tunemImg.png')] bg-no-repeat bg-cover bg-center py-6 lg:pt-11 lg:pb-16 rounded-lg mt-16 lg:mt-[107px] relative overflow-hidden"
+                className=" bg-[url('/images/home-page/tunemImg.png')] bg-no-repeat bg-cover bg-center py-6 lg:pt-11 lg:pb-16 rounded-lg mt-16 lg:mt-[107px] relative overflow-hidden"
             >
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black to-black/30 z-0"></div>
