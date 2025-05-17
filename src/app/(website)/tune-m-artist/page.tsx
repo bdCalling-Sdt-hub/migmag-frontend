@@ -3,6 +3,8 @@ import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
+import DiscoverVocal from './DiscoverVocal'
+import ArtistSlider from './ArtistSlider'
 
 const page: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -177,34 +179,10 @@ const page: React.FC = () => {
                     </div>
                 </div>
 
-
-
-
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <DiscoverVocal/>
+            <ArtistSlider></ArtistSlider>
 
 
 
