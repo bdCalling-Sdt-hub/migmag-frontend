@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
+import HireVocal from './HireVocal'
 
 const page: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false)
@@ -179,6 +180,11 @@ const page: React.FC = () => {
 
 
 
+      {/* content  */}
+
+          <HireVocal></HireVocal>
+
+
 
 
 
@@ -262,7 +268,7 @@ const page: React.FC = () => {
             </div>
 
             {/* Divider */}
-            <div className="border border-[#FFFFFF] mt-12"></div>
+            <div className="border border-[#000000] mt-12"></div>
 
             {/* Payment Methods and Links */}
             <div className="mt-7 pb-20 flex flex-col md:flex-row justify-between gap-10">
