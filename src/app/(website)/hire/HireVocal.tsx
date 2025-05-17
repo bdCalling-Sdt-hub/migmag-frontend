@@ -116,6 +116,14 @@ const HireVocal: React.FC = () => {
                     <Link href={"/hire"}><button className=' cursor-pointer  block mx-auto lg:text-lg text-[#000000] border border-[#000000] rounded-2xl px-3 md:px-6 py-1.5 md:py-2.5  ' >GET STARTED</button></Link>
                 </div>
 
+
+
+
+
+
+
+                
+
                 <div className="">
                     
 
@@ -148,6 +156,12 @@ const HireVocal: React.FC = () => {
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+
                 </div>
             </div>
         </div>

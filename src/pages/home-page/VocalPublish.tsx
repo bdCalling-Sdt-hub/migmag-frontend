@@ -140,25 +140,7 @@ const VocalPublish: React.FC = () => {
         </div>
       </div>
 
-      {/* <div className="max-w-[1539px]  mx-auto px-4 mt-10 lg:mt-[139px]  items-start gap-6 lg:gap-12">
-        <p className=" lg:hidden lg:text-lg mb-2  font-thin ">
-          WHAT OUR USERS SAY
-        </p>
-        <div className=' max-w-[1146px] flex flex-col lg:flex-row justify-start ' >
-          <div className="relative hidden lg:block lg:w-[150px] lg:h-[250px] flex flex-row items-center justify-start">
-            <p className="absolute -rotate-90 text-lg mt-[35%] font-thin tracking-wide whitespace-nowrap">
-              WHAT OUR USERS SAY
-            </p>
-          </div>
-
-          <div className="flex-1">
-            <h1 className="lg:text-[60px] md:text-5xl text-3xl font-thin leading-tight">
-              “LOVE TUNEM - GREAT CHOICE AND  EVEN BETTER SERVICE”
-            </h1>
-            <p className="mt-2 text-lg font-medium text-gray-600">Simon Godard, London</p>
-          </div>
-        </div>
-      </div> */}
+      
       <div className='max-w-[1539px] mx-auto px-4 ' >
         <div className=' maw-w-[1116px]  ' >
           <h1 className=' lg:text-[90px] md:text-4xl text-2xl font-thin lg:mt-32 md:20 mt-7 ' >“LOVE TUNEM - GREAT CHOICE AND  EVEN BETTER SERVICE” </h1>

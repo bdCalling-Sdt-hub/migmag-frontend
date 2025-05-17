@@ -5,6 +5,10 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 import DiscoverVocal from './DiscoverVocal'
 import ArtistSlider from './ArtistSlider'
+import ApplayTune from './ApplayTune'
+import ApplayVocalistFrom from './ApplayVocalistFrom'
+import CoreValue from './CoreValue'
+import ManageTune from './ManageTune'
 
 const page: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -183,6 +187,10 @@ const page: React.FC = () => {
 
             <DiscoverVocal/>
             <ArtistSlider></ArtistSlider>
+            <ApplayTune></ApplayTune>
+            <ApplayVocalistFrom></ApplayVocalistFrom>
+            <CoreValue></CoreValue>
+            <ManageTune></ManageTune>
 
 
 
