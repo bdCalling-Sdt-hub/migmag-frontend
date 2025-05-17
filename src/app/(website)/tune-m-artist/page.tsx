@@ -8,6 +8,7 @@ import ArtistSlider from './ArtistSlider'
 import ApplayTune from './ApplayTune'
 import ApplayVocalistFrom from './ApplayVocalistFrom'
 import CoreValue from './CoreValue'
+import ManageTune from './ManageTune'
 
 const page: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -189,6 +190,7 @@ const page: React.FC = () => {
             <ApplayTune></ApplayTune>
             <ApplayVocalistFrom></ApplayVocalistFrom>
             <CoreValue></CoreValue>
+            <ManageTune></ManageTune>
 
 
 
