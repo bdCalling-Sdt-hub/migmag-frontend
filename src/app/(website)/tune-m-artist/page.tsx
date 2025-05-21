@@ -37,7 +37,7 @@ const page: React.FC = () => {
     return (
         <>
             <div
-                className="bg-gradient-to-r from-black/10 to-transparent  bg-[url('/images/tune/tuneBanner/tune-bannerImg.jpg')] bg-cover object-cover bg-center w-full pb-28 "
+                className="bg-gradient-to-r from-black/10 to-transparent  bg-[url('/images/tune/tuneBanner/tune-bannerImg.jpg')] bg-cover object-cover bg-center w-full pb-6 md:pb-12 lg:pb-28 "
             >
                 <div className=" max-w-[1539px] mx-auto   bg-opacity-90 ">
                     <div className='flex items-center justify-between h-16 max-w-[1549px] pt-12 mx-auto px-4'>
@@ -166,37 +166,44 @@ const page: React.FC = () => {
 
                 {/* website content  */}
 
-                <div className=' max-w-[1539px] mx-auto px-4 mt-32' >
+                <div className=' max-w-[1539px] mx-auto px-4 lg:mt-32  ' >
                     <div className=' max-w-[631px] ' >
-                        <h1 className=' text-[85px] leading-24 text-[#fff] ' >
+                        <h1 className=' lg:text-[85px] text-3xl md:text-5xl mt-4 md:mt-8 lg:leading-24 text-[#fff] ' >
                             start your journey into the music industry with us.
                         </h1>
 
                     </div>
-                    <div className=' text-white font-bold text-lg ml-2 mt-20 leading-6 max-w-[605px] ' >
+                    <div className=' text-white font-bold lg:text-lg ml-2 mt-5 md:mt-8 lg:mt-20 leading-6 max-w-[605px] ' >
                         <p>Whether you're an established artist or waiting for your big break, Voclio is for you. Save time – Easy and clear overview over your projects. Seamless payments to you. No fee. Instant payouts.
                         </p>
 
                     </div>
-                    <div className='mt-16' >
-                        <Link className=' border border-[#FFFFFF] rounded-[17px] p-4 text-white text-lg  ' href={""}>APPLY NOW</Link>
+                    <div className=' mt-5 md:mt-8 lg:mt-16' >
+                        <Link className=' border border-[#FFFFFF] rounded-[17px] p-2 lg:p-4 text-white text-sm md:text-sm lg:text-lg  ' href={""}>APPLY NOW</Link>
                     </div>
                 </div>
 
             </div>
 
-            <DiscoverVocal/>
+
+            <DiscoverVocal />
             <ArtistSlider></ArtistSlider>
             <ApplayTune></ApplayTune>
             <ApplayVocalistFrom></ApplayVocalistFrom>
             <CoreValue></CoreValue>
-            <ManageTune></ManageTune>
+            <ManageTune  ></ManageTune>
+
+
+
+            <div className=' hidden ' >
+
+            </div>
 
 
 
 
             {/* footer */}
-            <div>
+            <div className=' ' >
                 <div className='max-w-[1549px] mx-auto px-4' >
                     <div className="max-w-[1539px] mx-auto">
                         {/* Logo */}
