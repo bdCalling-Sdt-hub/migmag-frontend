@@ -1,9 +1,10 @@
 import React from 'react'
+import SupportFrom from './SupportFrom'
 
 const page : React.FC = () => {
   return (
     <div>
-      <h1>support</h1>
+        <SupportFrom></SupportFrom>
     </div>
   )
 }

@@ -1,9 +1,10 @@
 import React from 'react'
+import PurchasePage from './PurchasePage'
 
 const page = () => {
   return (
     <div>
-      <h1>purchase page</h1>
+      <PurchasePage></PurchasePage>
     </div>
   )
 }
