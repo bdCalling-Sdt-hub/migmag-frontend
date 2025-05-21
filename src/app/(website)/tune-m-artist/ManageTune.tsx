@@ -27,9 +27,9 @@ const ManageTune: React.FC = () => {
     ]
     return (
         <div>
-            <div className=' pt-20 pb-28 max-w-[1427px] mx-auto ' >
+            <div className=' pt-20 pb-28 max-w-[1427px] mx-auto px-4 ' >
                 <h1 className=' text-center text-[35px] font-bold leading-9 ' >Who manages TuneM?</h1>
-                <div className=' flex justify-between mt-20 ' >
+                <div className=' flex lg:flex-row flex-col justify-between mt-20 ' >
                     {
                         tuneData.map((item, i) => {
                             return (

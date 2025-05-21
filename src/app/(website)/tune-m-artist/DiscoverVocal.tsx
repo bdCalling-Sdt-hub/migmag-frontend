@@ -9,11 +9,11 @@ const DiscoverVocal: React.FC = () => {
                     <p className=' lg:rotate-90 text-[#000000] lg:text-lg lg:absolute lg:top-14 lg:-ml-20 my-3 lg:my-0  ' >JUST FOR YOU</p>
                 </div>
                 {/* left side  */}
-                <div>
+                <div className='mx-auto' >
                     <Image src={"/images/hire/bannerImg/hireBannerImg.png"} className=' object-cover rounded-lg block mx-auto my-1 ' width={652} height={654} alt='....' />
                 </div>
                 {/* right side  */}
-                <div>
+                <div className='mx-auto' >
                     <div className=' max-w-[411px] ' >
                         <h1 className=' text-2xl lg:text-[35px] font-bold text-[#000000] leading-9 ' >
                             Discover vocal that match your tastes
