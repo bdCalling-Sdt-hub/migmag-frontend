@@ -1,9 +1,10 @@
 import React from 'react'
+import WishListPage from './WishListPage'
 
 const page = () => {
   return (
     <div>
-      <h1>wishlist</h1>
+      <WishListPage></WishListPage>
     </div>
   )
 }

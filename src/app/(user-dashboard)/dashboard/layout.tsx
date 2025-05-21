@@ -88,7 +88,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                             <div className="relative">
                                 <Link href="">
                                     <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center" >
-                                        
+
 
                                     </div>
 
@@ -152,7 +152,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                         <Sidebar />
                     </div>
 
-                    <div className="w-full p-8  mt-[89px]">
+                    <div className="w-full p-8  mt-[95px]">
                         {children}
                     </div>
                 </div>
