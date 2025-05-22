@@ -1,9 +1,10 @@
 import React from 'react'
+import AccountFromPage from './AccountFromPage'
 
 const page : React.FC = () => {
   return (
     <div>
-      account
+      <AccountFromPage></AccountFromPage>
     </div>
   )
 }
