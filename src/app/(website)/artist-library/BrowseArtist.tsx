@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react';
-import { Search } from 'lucide-react';
+import { ArrowBigDown, ArrowLeft, ArrowRight, Search } from 'lucide-react';
 import { motion, AnimatePresence } from "framer-motion";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import Image from 'next/image';
@@ -32,7 +32,7 @@ type FilterType = {
     latest: string
 };
 
-const BrowseAllVocal = () => {
+const BrowseArtist = () => {
     const genreRef = useRef<HTMLDivElement>(null);
     const bpmRef = useRef<HTMLDivElement>(null);
     const keyRef = useRef<HTMLDivElement>(null);
@@ -79,24 +79,20 @@ const BrowseAllVocal = () => {
     // BPM  start
 
 
-    const bpm: number[] | string[] = [60, 80, 100, 120, 140, 160];
 
 
-    const [selectedBPM, setSelectedBPM] = useState<string[]>([]);
+    const bpm: number[] | string[] = [60, 80, 100, 120, 140, 16];
+
+
+    const [selectedBPM, setSelectedBPM] = useState<number[]>([]);
     const [openBPM, setOpenBPM] = useState<boolean>(false);
 
 
 
-    function toggleBPM(bpm: string): void {
-        let newBPM: string[];
-        if (selectedBPM.includes(bpm)) {
-            newBPM = selectedBPM.filter((g) => g !== bpm);
-        } else {
-            newBPM = [...selectedBPM, bpm];
-        }
-        setSelectedBPM(newBPM);
-        setOpenBPM(false);  // dropdown close korar jonno
-    }
+
+
+    const [direction, setDirection] = useState("asc");
+
 
 
 
@@ -109,6 +105,7 @@ const BrowseAllVocal = () => {
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
+
 
     const minBPM = Math.min(...bpm);
     const maxBPM = Math.max(...bpm);
@@ -127,12 +124,12 @@ const BrowseAllVocal = () => {
         return `linear-gradient(to right, white 0%, white ${minPercent}%, yellow ${minPercent}%, yellow ${maxPercent}%, white ${maxPercent}%, white 100%)`;
     };
 
-
     // BPM  end
 
 
     // Key  start
     const keys: string[] = ["60", "80", "100", "120", "140", "160"];
+
     const [selectedKey, setSelectedKey] = useState<string[]>([]);
     const [openKey, setOpenKey] = useState<boolean>(false);
 
@@ -363,10 +360,10 @@ const BrowseAllVocal = () => {
                 bpm: '128BMP',
                 key: 'Cminor',
                 gender: 'Female',
-                license: 'NON-EXCLUSIVE',
+                license: 'EXCLUSIVE',
                 price: '€120',
-                type: 'non-exclusive',
-                image: "/images/home-page/loginImg.png",
+                type: 'exclusive',
+                image: "/images/home-page/emilVerify.png",
             },
             {
                 id: 2,
@@ -518,7 +515,8 @@ const BrowseAllVocal = () => {
         setSearchTerm(e.target.value);
     };
 
-    const handleFilterChange = (key: keyof FilterType, value: string) => {
+    const handleFilterChange = (key: keyof FilterType, value: number | string) => {
+        // setOpenBPM(false)
         setFilter((prev) => ({ ...prev, [key]: value }));
     };
 
@@ -537,8 +535,22 @@ const BrowseAllVocal = () => {
         setSearchTerm("")
     }
 
+
+    useEffect(() => {
+        if (openBPM) {
+            document.body.style.overflow = "hidden"; // 🔒 disable scroll
+        } else {
+            document.body.style.overflow = "auto"; // 🔓 enable scroll
+        }
+
+        // Cleanup just in case
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [openBPM]);
+
     return (
-        <div className=" max-w-[1551px] mx-auto px-4  ">
+        <div className=" max-w-[1551px] mt-16 mx-auto px-4  border border-white ">
             <div className=' mt-12 mb-6 ' >
                 <div className=' border border-white ' ></div>
             </div>
@@ -622,8 +634,6 @@ const BrowseAllVocal = () => {
 
                 {/* BPM */}
 
-                {/* BPM */}
-
                 <div className="relative md:w-[177px] w-[150px] " ref={bpmRef}>
                     <button
                         type="button"
@@ -637,7 +647,7 @@ const BrowseAllVocal = () => {
                         )}
 
                         <span className="w-28 text-white md:text-lg   ">
-                            BPM
+                            {selectedBPM.length > 0 ? <>Selected {selectedBPM.length}</> : "BPM"}
                         </span>
                     </button>
 
@@ -673,7 +683,7 @@ const BrowseAllVocal = () => {
                                                     {minValue.toFixed(2)}
                                                 </div>
                                                 <div
-                                                    className="absolute  -top-4 text-sm font-semibold text-white bg-black px-2 py-1 rounded"
+                                                    className="absolute -top-4 text-sm font-semibold text-white bg-black px-2 py-1 rounded"
                                                     style={{ left: `calc(${getPercent(maxValue)}% - 20px)` }}
                                                 >
                                                     {maxValue.toFixed(2)}
@@ -726,12 +736,8 @@ const BrowseAllVocal = () => {
                                                 </button>
 
                                                 <button
-                                                    onClick={() => {
-                                                        handleFilterChange("bpm", [minValue, maxValue]); // ⬅ send the selected range
-                                                        setSelectedBPM([minValue, maxValue]);           // ⬅ store the selection
-                                                        setOpenBPM(false);                              // ⬅ close the modal
-                                                    }}
-                                                    className="bg-[#E7F056] cursor-pointer text-black px-4 py-1 font-semibold rounded-lg transition"
+                                                    onClick={() => handleFilterChange("bpm", selectedBPM)}
+                                                    className="bg-[#E7F056] cursor-pointer  text-black px-4 py-1 font-semibold rounded-lg transition"
                                                 >
                                                     Filter
                                                 </button>
@@ -743,6 +749,11 @@ const BrowseAllVocal = () => {
                         )}
                     </AnimatePresence>
                 </div>
+
+
+
+
+
 
 
 
@@ -1024,130 +1035,59 @@ const BrowseAllVocal = () => {
             </div>
 
 
+            {/* artist list  */}
 
-            {/* table  */}
 
-            <div className='overflow-x-auto w-full' >
-                <table className="  min-w-[800px] rounded-lg overflow-hidden w-full">
-                    <thead>
-                        <tr className="text-white  ">
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] ">TITLE</th>
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] "></th>
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] ">ARTIST</th>
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] ">GENRE</th>
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] ">BPM</th>
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] ">KEY</th>
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] ">GENDER</th>
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] ">License</th>
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] "></th>
-                            <th className="py-3 lg:px-6 mt-10 mb-8 text-left text-[#E7F056] text-[10px] md:text-[16px] ">PRICE</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {filteredData.slice(0, 10).map((item, i) => (
-                            <motion.tr
-                                key={item.id}
-                                className={`cursor-pointer ${i % 2 === 0 ? "bg-[#201F1F]" : "bg-[#000000]"} rounded-md `}
-                            >
-                                <td className="lg:py-4 py-1 px-3 lg:px-6">
-                                    <div className="relative w-20 h-20">
-                                        <Image
-                                            src={item.image}
-                                            alt={item.title}
-                                            width={80}
-                                            height={80}
-                                            className="w-full h-full rounded-lg object-cover"
-                                        />
-                                        <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                                            <svg
-                                                width="52"
-                                                height="52"
-                                                viewBox="0 0 52 52"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <circle cx="26" cy="26" r="25.5" stroke="#E7F056" />
-                                                <g clipPath="url(#clip0_1_1751)">
-                                                    <path
-                                                        d="M18.72 14.594V37.4059C18.7182 37.7838 18.8178 38.1553 19.0083 38.4813C19.1988 38.8074 19.4732 39.0759 19.8028 39.2588C20.1324 39.4417 20.5049 39.5322 20.8813 39.5208C21.2578 39.5094 21.6242 39.3966 21.9422 39.1941L40.6175 26.4512C40.9186 26.2617 41.1668 25.9987 41.3388 25.6866C41.5108 25.3746 41.6011 25.0238 41.6011 24.6672C41.6011 24.3106 41.5108 23.9598 41.3388 23.6478C41.1668 23.3357 40.9186 23.0726 40.6175 22.8832L21.9422 12.8142C21.6248 12.6121 21.2591 12.4993 20.8834 12.4876C20.5077 12.4759 20.1358 12.5656 19.8065 12.7475C19.4772 12.9294 19.2026 13.1968 19.0115 13.5216C18.8204 13.8464 18.7197 14.2168 18.72 14.594Z"
-                                                        fill="#E7F056"
-                                                    />
-                                                </g>
-                                                <defs>
-                                                    <clipPath id="clip0_1_1751">
-                                                        <rect
-                                                            width="22.88"
-                                                            height="27.04"
-                                                            fill="white"
-                                                            transform="translate(18.72 12.48)"
-                                                        />
-                                                    </clipPath>
-                                                </defs>
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </td>
-                                <td className="lg:py-4 lg:px-6 px-3 ">
-                                    <h3 className="text-white lg:font-bold text-[10px] lg:text-xl lg:leading-6 ">{item.title}</h3>
-                                </td>
-                                <td className="lg:py-4 lg:px-6 px-3 ">
-                                    <p className="text-white lg:font-bold text-[10px] lg:text-xl lg:leading-6">{item.artist}</p>
-                                </td>
-                                <td className="lg:py-4 py-1 px-2 lg:px-6 text-white lg:font-bold text-[10px] lg:text-xl lg:leading-6">{item.genre}</td>
-                                <td className="lg:py-4 py-1 px-2 lg:px-6 text-white lg:font-bold text-[10px] lg:text-xl lg:leading-6">{item.bpm}</td>
-                                <td className="lg:py-4 py-1 px-2 lg:px-6 text-white lg:font-bold text-[10px] lg:text-xl lg:leading-6">{item.key}</td>
-                                <td className="lg:py-4 py-1 px-2 lg:px-6 text-white lg:font-bold text-[10px] lg:text-xl lg:leading-6">{item.gender}</td>
-                                <td className='lg:py-4 py-1 px-2 lg:px-6 text-white md:text-lg text-[10px]  '
-
-                                >
-                                    <h1 className={` text-center rounded-2xl py-1 px-3
-                                    ${item.license === "EXCLUSIVE"
-                                            ? "bg-[#80BC02] "
-                                            : item.license === "NON-EXCLUSIVE"
-                                                ? "bg-[#818080]"
-                                                : item.license === "PREMIUM"
-                                                    ? "bg-[#00C2CE]"
-                                                    : ""
-                                        }`} >
-                                        {item.license}
-                                    </h1>
-                                </td>
-                                <td className="py-4 px-6">
-                                    <span className="inline-block">
-                                        <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 1.48486H2.78025C3.88523 1.48486 4.75488 2.65437 4.6628 3.99992L3.8136 16.5249C3.67036 18.5747 4.99019 20.3352 6.66812 20.3352H17.5644C19.0377 20.3352 20.3269 18.8514 20.4394 17.0531L20.9919 7.62161C21.1147 5.53411 19.8255 3.83644 18.1169 3.83644H4.90836" stroke="#E7F056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M15.5797 26.6355C16.2861 26.6355 16.8586 25.9318 16.8586 25.0636C16.8586 24.1954 16.2861 23.4917 15.5797 23.4917C14.8733 23.4917 14.3008 24.1954 14.3008 25.0636C14.3008 25.9318 14.8733 26.6355 15.5797 26.6355Z" stroke="#E7F056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M7.39463 26.6355C8.10096 26.6355 8.67354 25.9318 8.67354 25.0636C8.67354 24.1954 8.10096 23.4917 7.39463 23.4917C6.68831 23.4917 6.11572 24.1954 6.11572 25.0636C6.11572 25.9318 6.68831 26.6355 7.39463 26.6355Z" stroke="#E7F056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M8.16187 9.03003H20.4394" stroke="#E7F056" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-
-                                    </span>
-                                </td>
-                                <td className="lg:py-4 py-1 px-3 lg:px-6 ">
-                                    <h1 className=' text-[#000000] font-bold text-[10px] lg:text-lg bg-[#E7F056] text-center rounded-2xl px-2 ' >
-                                        {item.price}
-                                    </h1>
-                                </td>
-                            </motion.tr>
-                        ))}
-                    </tbody>
-                </table>
+            <div className=' mt-14 ' >
+                <div className="transition-transform duration-300 hover:scale-105 overflow-x-hidden mx-auto ">
+                    <div className="w-[357px] rounded-md p-5 bg-[#222222]">
+                        <Image
+                            src="/images/tune/tuneBanner/manageTune.png"
+                            width={340}
+                            height={219}
+                            alt=".."
+                            className="object-cover rounded-md"
+                        />
+                        <div className="flex flex-row items-center justify-between mt-3.5">
+                            <h1 className="text-white text-lg leading-6">Ethan Levi</h1>
+                            <Link href="">
+                                <p className="flex flex-row items-center text-sm leading-6 text-white">
+                                    VIEW <span><ArrowRight /></span>
+                                </p>
+                            </Link>
+                        </div>
+                        <div className="mt-2">
+                            <p className="text-[#818080] text-lg leading-6">Singer - Songwriter</p>
+                            <p className="mt-2 text-[#818080] text-lg leading-6">Genre: Hip Hop</p>
+                        </div>
+                        <div className="mt-5 text-[#FFFFFF] text-[15px] leading-6 my-auto">
+                            A 28 year old singer-songwriter currently attending the Berklee School of Music in Boston, MA. He pulls inspiration from R&B and Neo Soul and has a powerful voice that’s perfect for any track.
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div className='  mt-14 mb-20 grid grid-cols-2 items-center ' >
+
+
+
+
+
+
+
+            <div className='  mt-14 mb-20 grid grid-cols-2 items-center hidden ' >
                 <div>
                     <h1 className=' text-[#818080] text-lg ' >*New Vocals Added Monthly</h1>
                     <h1 className=' text-3xl text-[#E7F056] leading-9 font-thin ' >Notify me</h1>
                 </div>
                 <div  >
                     <Link href={""}>
-                        <button className=' rounded-2xl border border-white text-white px-6 py-3 text-lg cursor-pointer   ' >LOAD MORE VOCALS</button>
+                        <button className=' rounded-2xl border border-white text-white px-6 py-3 text-lg cursor-pointer   ' >LOAD MORE ARTISTS</button>
                     </Link>
                 </div>
             </div>
 
 
-            <div className='  flex  flex-row justify-between items-center  ' >
+            <div className='  flex  flex-row justify-between items-center hidden  ' >
                 <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-14 rounded-md ' >
                     <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >100% Royalty free</h1>
                     <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
@@ -1171,7 +1111,7 @@ const BrowseAllVocal = () => {
 
 
 
-            <div className='  flex lg:flex-row flex-col items-start justify-between relative gap-5 mt-40 ' >
+            <div className='  flex lg:flex-row flex-col items-start justify-between relative gap-5 mt-40 hidden ' >
                 {/* left side  */}
                 <div>
                     <div className=' max-w-[411px] ' >
@@ -1272,5 +1212,5 @@ const BrowseAllVocal = () => {
     );
 };
 
-export default BrowseAllVocal;
+export default BrowseArtist;
 
