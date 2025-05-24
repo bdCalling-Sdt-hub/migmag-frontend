@@ -161,18 +161,18 @@ const page: React.FC = () => {
 
         {/* website content  */}
 
-        <div className=' max-w-[1539px] mx-auto px-4 mt-32
+        <div className=' max-w-[1539px] mx-auto px-4 mt-16 lg:mt-32
          ' >
           <div className=' max-w-[631px] ' >
-            <h1 className=' text-8xl leading-20 text-[#fff] ' >Hire singers .</h1>
-            <h1 className=' text-8xl leading-20 mt-6 text-[#E7F056]  ' >Royalty Free</h1>
+            <h1 className=' lg:text-8xl text-4xl lg:leading-20 text-[#fff] ' >Hire singers .</h1>
+            <h1 className=' lg:text-8xl text-4xl lg:leading-20 mt-6 text-[#E7F056]  ' >Royalty Free</h1>
           </div>
-          <div className=' text-white font-bold text-lg ml-2 mt-20 leading-6 ' >
+          <div className=' text-white font-bold text-lg ml-2 mt-10 lg:mt-20 leading-6 ' >
             <p>Get the world’s best singers to record on your song.</p>
             <p>Transparent pricing. No hidden fees. Excellent vocalists.</p>
           </div>
           <div className='mt-16' >
-            <Link className=' border border-[#FFFFFF] rounded-[17px] p-4 text-white text-lg  ' href={""}>BROWSE OUR SINGERS</Link>
+            <Link className=' border border-[#FFFFFF] rounded-[17px] p-4 text-white text-lg  ' href={"/artist-library"}>BROWSE OUR SINGERS</Link>
           </div>
         </div>
 
