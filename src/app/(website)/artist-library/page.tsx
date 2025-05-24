@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 import ArtistLibraryBanner from './ArtistLibraryBanner'
+import BrowseArtist from './BrowseArtist'
 
 const page: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = useState(false)
@@ -164,6 +165,7 @@ const page: React.FC = () => {
         {/* website content  */}
 
         <ArtistLibraryBanner></ArtistLibraryBanner>
+        <BrowseArtist/>
 
 
 
