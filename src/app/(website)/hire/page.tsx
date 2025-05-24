@@ -287,20 +287,19 @@ const page: React.FC = () => {
                 <div>
                   <ul className="flex flex-col gap-1">
                     <li className="text-lg  text-[#000000] font-bold leading-9">TUNEM</li>
-                    <li><Link className="text-lg  text-[#000000] leading-9" href="">About</Link></li>
-                    <li><Link className="text-lg  text-[#000000] leading-9" href="">Hire a Singer</Link></li>
-                    <li><Link className="text-lg  text-[#000000] leading-9" href="">Production</Link></li>
-                    <li><Link className="text-lg  text-[#000000] leading-9" href="">Courses</Link></li>
-                    <li><Link className="text-lg  text-[#000000] leading-9" href="">Contact Us</Link></li>
+                    <li><Link className="text-lg  text-[#000000] leading-9" href="#">About</Link></li>
+                    <li><Link className="text-lg  text-[#000000] leading-9" href="/artist-library">Hire a Singer</Link></li>
+                    <li><Link className="text-lg  text-[#000000] leading-9" href="#">Production</Link></li>
+                    <li><Link className="text-lg  text-[#000000] leading-9" href="contact">Contact Us</Link></li>
                   </ul>
                 </div>
 
                 <div>
                   <ul className="flex flex-col gap-1">
                     <li className="text-lg  text-[#000000] font-bold leading-9">SUPPORT</li>
-                    <li><Link className="text-lg  text-[#000000] leading-9" href="">Help Centre</Link></li>
-                    <li><Link className="text-lg  text-[#000000] leading-9" href="">Support</Link></li>
-                    <li><Link className="text-lg  text-[#000000] leading-9" href="">Refund Policy</Link></li>
+                    <li><Link className="text-lg  text-[#000000] leading-9" href="#">Help Centre</Link></li>
+                    <li><Link className="text-lg  text-[#000000] leading-9" href="#">Support</Link></li>
+                    <li><Link className="text-lg  text-[#000000] leading-9" href="#">Refund Policy</Link></li>
                   </ul>
                 </div>
 

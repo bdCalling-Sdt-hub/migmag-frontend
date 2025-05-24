@@ -81,8 +81,7 @@ const Footer: React.FC = () => {
                                 <li><Link className="text-lg text-[#000000] leading-9" href="">About</Link></li>
                                 <li><Link className="text-lg text-[#000000] leading-9" href="">Hire a Singer</Link></li>
                                 <li><Link className="text-lg text-[#000000] leading-9" href="">Production</Link></li>
-                                <li><Link className="text-lg text-[#000000] leading-9" href="">Courses</Link></li>
-                                <li><Link className="text-lg text-[#000000] leading-9" href="">Contact Us</Link></li>
+                                <li><Link className="text-lg text-[#000000] leading-9" href="/contact">Contact Us</Link></li>
                             </ul>
                         </div>
 

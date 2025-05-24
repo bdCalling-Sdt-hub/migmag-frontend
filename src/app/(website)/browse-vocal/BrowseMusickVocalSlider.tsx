@@ -168,7 +168,7 @@ export default function BrowseMusickVocalSlider() {
             <div className=' max-w-[1539px] mx-auto ' >
 
             </div>
-            
+
 
         </main>
     );

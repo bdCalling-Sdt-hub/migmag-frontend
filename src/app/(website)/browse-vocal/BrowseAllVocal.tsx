@@ -532,6 +532,8 @@ const BrowseAllVocal = () => {
         (filter.type ? item.type === filter.type : true)
     );
 
+    const [visibleData,setVisibleData] = useState(10)
+
     const clearSearch = () => {
         setFilter("")
         setSearchTerm("")
@@ -564,7 +566,7 @@ const BrowseAllVocal = () => {
             </div>
 
 
-            <div className=" grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-3 grid-cols-2 xl:gap-x-14 md:gap-x-10 gap-y-4 gap-x-5 mx-auto   mb-6  ">
+            <div className=" grid 2xl:grid-cols-7 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-3 grid-cols-2 xl:gap-x-14 md:gap-x-10 gap-y-4 gap-x-5 mx-auto   mb-6  ">
 
                 {/* genre  */}
 
@@ -1044,7 +1046,7 @@ const BrowseAllVocal = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {filteredData.slice(0, 10).map((item, i) => (
+                        {filteredData.slice(0, visibleData).map((item, i) => (
                             <motion.tr
                                 key={item.id}
                                 className={`cursor-pointer ${i % 2 === 0 ? "bg-[#201F1F]" : "bg-[#000000]"} rounded-md `}
@@ -1134,34 +1136,36 @@ const BrowseAllVocal = () => {
                 </table>
             </div>
 
-            <div className='  mt-14 mb-20 grid grid-cols-2 items-center ' >
+            <div className='  mt-14 mb-20 grid lg:grid-cols-2 items-center ' >
                 <div>
                     <h1 className=' text-[#818080] text-lg ' >*New Vocals Added Monthly</h1>
                     <h1 className=' text-3xl text-[#E7F056] leading-9 font-thin ' >Notify me</h1>
                 </div>
                 <div  >
-                    <Link href={""}>
-                        <button className=' rounded-2xl border border-white text-white px-6 py-3 text-lg cursor-pointer   ' >LOAD MORE VOCALS</button>
-                    </Link>
+                    {
+                        visibleData<filteredData.length && (
+                            <button onClick={()=>{setVisibleData(prev=>prev+10)}} className=' mt-4 lg:mt-0 rounded-2xl border border-white text-white px-6 py-3 text-lg cursor-pointer   ' >LOAD MORE VOCALS</button>
+                        )
+                    }
                 </div>
             </div>
 
 
-            <div className='  flex  flex-row justify-between items-center  ' >
-                <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-14 rounded-md ' >
-                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >100% Royalty free</h1>
+            <div className='  flex flex-col lg:flex-row  space-y-5 justify-between items-center  ' >
+                <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-6 lg:pb-14 rounded-md ' >
+                    <h1 className=' lg:pt-44 pt-7 text-3xl leading-9 text-white font-bold ' >100% Royalty free</h1>
                     <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
                         <p>Use your vocals anywhere. No limits. Cleared for release. Keep all royalties.</p>
                     </div>
                 </div>
-                <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-14 rounded-md ' >
-                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Yours forever</h1>
+                <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-6 lg:pb-14 rounded-md ' >
+                    <h1 className=' lg:pt-44 pt-7 text-3xl leading-9 text-white font-bold ' >Yours forever</h1>
                     <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
                         <p>Dry vocal stems, Licence and Invoice emailed after purchase. Instrumental at an extra cost. </p>
                     </div>
                 </div>
-                <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-14 rounded-md ' >
-                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Vocal love gurantee</h1>
+                <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-6 lg:pb-14 rounded-md ' >
+                    <h1 className=' lg:pt-44 pt-7 text-3xl leading-9 text-white font-bold ' >Vocal love gurantee</h1>
                     <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
                         <p>Don’t love your existing vocal. We’ll replace it with a new one!</p>
                     </div>
@@ -1171,7 +1175,7 @@ const BrowseAllVocal = () => {
 
 
 
-            <div className='  flex lg:flex-row flex-col items-start justify-between relative gap-5 mt-40 ' >
+            <div className='  flex lg:flex-row flex-col items-start justify-between relative gap-5 lg:mt-40 mt-8 ' >
                 {/* left side  */}
                 <div>
                     <div className=' max-w-[411px] ' >
@@ -1223,10 +1227,6 @@ const BrowseAllVocal = () => {
                             </div>
                         </div>
                     </div>
-
-
-
-
 
                 </div>
                 {/* right side  */}

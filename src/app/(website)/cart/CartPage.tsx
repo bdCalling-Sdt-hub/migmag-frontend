@@ -266,39 +266,48 @@ const CartPage = () => {
                 </p>
 
                 <div className="mt-10">
-                    {currentTracks.map((track) => (
-                        <div
-                            key={track.id}
-                            onClick={() => openModal(track)}
-                            className="cursor-pointer flex items-center justify-between bg-black text-white p-4 rounded-md mb-2 shadow hover:bg-[#1a1a1a]"
-                        >
-                            <div className="flex items-center gap-4">
-                                <div className="relative w-16 h-16">
-                                    <img src={track.image} alt="cover" className="w-full h-full object-cover rounded-md" />
-                                    <FaPlay className="absolute inset-0 m-auto text-yellow-400 w-6 h-6" />
+                    <div className="overflow-x-auto w-full">
+                        {currentTracks.map((track) => (
+                            <div
+                                key={track.id}
+                                onClick={() => openModal(track)}
+                                className="cursor-pointer flex flex-col lg:flex-row items-start lg:items-center justify-between bg-black text-white p-4 rounded-md mb-4 shadow hover:bg-[#1a1a1a] min-w-[350px]"
+                            >
+                                {/* Image + Title/Artist */}
+                                <div className="flex items-start gap-4 w-full lg:w-auto">
+                                    <div className="relative w-16 h-16 flex-shrink-0">
+                                        <img src={track.image} alt="cover" className="w-full h-full object-cover rounded-md" />
+                                        <FaPlay className="absolute inset-0 m-auto text-yellow-400 w-6 h-6" />
+                                    </div>
+                                    <div>
+                                        <div className="font-bold text-base">{track.title}</div>
+                                        <div className="text-sm text-gray-300">{track.artist}</div>
+                                    </div>
                                 </div>
-                                <div className="space-y-1">
-                                    <div className="font-bold">{track.title}</div>
-                                    <div className="text-sm text-gray-300">{track.artist}</div>
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-5 gap-4 text-sm text-gray-200 w-1/2 text-center">
-                                <span>{track.genre}</span>
-                                <span>{track.bpm}</span>
-                                <span>{track.key}</span>
-                                <span>{track.gender}</span>
-                                <span>
-                                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${licenseColors[track.license]}`}>
-                                        {track.license}
+
+                                {/* Track Info */}
+                                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4 text-sm text-gray-200 mt-4 lg:mt-0 w-full lg:w-1/2 text-left sm:text-center">
+                                    <span>{track.genre}</span>
+                                    <span>{track.bpm}</span>
+                                    <span>{track.key}</span>
+                                    <span>{track.gender}</span>
+                                    <span>
+                                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${licenseColors[track.license]}`}>
+                                            {track.license}
+                                        </span>
                                     </span>
-                                </span>
+                                </div>
+
+                                {/* Price + Cart */}
+                                <div className="flex items-center gap-4 mt-4 lg:mt-0 lg:justify-end w-full lg:w-auto">
+                                    <FaShoppingCart className="text-yellow-300 cursor-pointer" />
+                                    <span className="bg-yellow-300 text-black font-bold px-4 py-1 rounded-full">
+                                        €{track.price}
+                                    </span>
+                                </div>
                             </div>
-                            <div className="flex items-center gap-4">
-                                <FaShoppingCart className="text-yellow-300 cursor-pointer" />
-                                <span className="bg-yellow-300 text-black font-bold px-4 py-1 rounded-full">€{track.price}</span>
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
 
                     <div className="flex justify-between items-center mt-6 text-sm text-[#344054]">
                         <span>
