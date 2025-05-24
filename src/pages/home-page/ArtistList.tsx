@@ -1,9 +1,11 @@
+"use client"
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react'
+import React, { useState } from 'react'
 import { FaArrowRight } from 'react-icons/fa';
 
-const ArtistList : React.FC = () => {
+const ArtistList: React.FC = () => {
+    const [visibleData, setVisibleData] = useState<number>(6)
     interface SingerInterface {
         image: string;
         name: string;
@@ -77,9 +79,9 @@ const ArtistList : React.FC = () => {
         <div className="bg-[url('/images/home-page/artist/artistBgImg.png')] bg-no-repeat bg-cover bg-center  w-full">
             <div className=' max-w-[1539px]   mx-auto  ' >
                 <h1 className="text-white lg:text-lg lg:pt-9 pt-3 mx-auto ">POPULAR ARTISTS</h1>
-                <div className=' lg:my-10 my-4 flex flex-col mx-auto lg:flex-row items-center justify-between gap-3 lg:gap-7     ' >
+                <div className=' lg:my-10 my-4 grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2  flex-col mx-auto lg:flex-row items-center justify-between gap-3 lg:gap-7     ' >
                     {
-                        singerData.slice(0, 5).map((item, i) => {
+                        singerData.slice(0, visibleData).map((item, i) => {
                             return (
                                 <div
                                     key={i}
@@ -106,7 +108,7 @@ const ArtistList : React.FC = () => {
                                         </h1>
                                     </div>
                                     <div>
-                                        <Link href={"/profile"} className=' text-[#000000] leading-6 text-sm flex items-center gap-1 font-thin  ' >VIEW  <span><FaArrowRight /></span> </Link>
+                                        <Link href={"/artist-library"} className=' text-[#000000] leading-6 text-sm flex items-center gap-1 font-thin  ' >VIEW  <span><FaArrowRight /></span> </Link>
                                     </div>
                                 </div>
                             );
@@ -118,11 +120,27 @@ const ArtistList : React.FC = () => {
                         <h1 className=' text-white font-thin text-lg leading-6 mb-6 lg:mb-[69px] mx-auto ' >Check out some of the most popular artists coming up in your city, from club nights and gigs to artist signings.</h1>
                     </div>
                     <div>
-                        <Link href="/all-artist" >
-                            <button className=" border border-white font-thin w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer mb-10 ">
-                                SEE ALL
-                            </button>
-                        </Link>
+                        {singerData.length > 6 && (
+                            <div className="flex flex-col items-center space-y-4 mb-10">
+                                {visibleData < singerData.length && (
+                                    <button
+                                        onClick={() => setVisibleData(prev => prev + 6)}
+                                        className="border border-white font-thin w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer"
+                                    >
+                                        SEE ALL
+                                    </button>
+                                )}
+
+                                {visibleData > 6 && (
+                                    <button
+                                        onClick={() => setVisibleData(6)}
+                                        className="border border-white font-thin w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer"
+                                    >
+                                        SEE LESS
+                                    </button>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

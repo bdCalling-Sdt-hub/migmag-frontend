@@ -15,6 +15,7 @@ const TopTenVocal: React.FC = () => {
         audio: string;
 
     }
+    const [visibleData, setVisibleData] = useState<number>(10);
     const audioData: AudioItem[] = [
         {
             id: 3,
@@ -40,6 +41,62 @@ const TopTenVocal: React.FC = () => {
             price: '€9',
             img: '/images/home-page/slide-4.png',
             audio: '/images/home-page/audio-3.mp3',
+        },
+        {
+            id: 6,
+            title: 'Jazz Flow',
+            name: 'Hridoyer Kotha',
+            price: '€13',
+            img: '/images/home-page/slide-4.png',
+            audio: '/images/home-page/audio-4.mp3',
+        },
+        {
+            id: 6,
+            title: 'Jazz Flow',
+            name: 'Hridoyer Kotha',
+            price: '€13',
+            img: '/images/home-page/slide-4.png',
+            audio: '/images/home-page/audio-4.mp3',
+        },
+        {
+            id: 6,
+            title: 'Jazz Flow',
+            name: 'Hridoyer Kotha',
+            price: '€13',
+            img: '/images/home-page/slide-4.png',
+            audio: '/images/home-page/audio-4.mp3',
+        },
+        {
+            id: 6,
+            title: 'Jazz Flow',
+            name: 'Hridoyer Kotha',
+            price: '€13',
+            img: '/images/home-page/slide-4.png',
+            audio: '/images/home-page/audio-4.mp3',
+        },
+        {
+            id: 6,
+            title: 'Jazz Flow',
+            name: 'Hridoyer Kotha',
+            price: '€13',
+            img: '/images/home-page/slide-4.png',
+            audio: '/images/home-page/audio-4.mp3',
+        },
+        {
+            id: 6,
+            title: 'Jazz Flow',
+            name: 'Hridoyer Kotha',
+            price: '€13',
+            img: '/images/home-page/slide-4.png',
+            audio: '/images/home-page/audio-4.mp3',
+        },
+        {
+            id: 6,
+            title: 'Jazz Flow',
+            name: 'Hridoyer Kotha',
+            price: '€13',
+            img: '/images/home-page/slide-4.png',
+            audio: '/images/home-page/audio-4.mp3',
         },
         {
             id: 6,
@@ -92,7 +149,7 @@ const TopTenVocal: React.FC = () => {
                 </div>
 
                 <div className=" grid md:grid-cols-2 grid-cols-1 lg:gap-x-7 gap-x-3 order w-[95%]  flex-1  ">
-                    {audioData.slice(0, 4).map((item, i) => (
+                    {audioData.slice(0, visibleData).map((item, i) => (
                         <div
                             key={item.id}
                             className={`:h-32 flex flex-col gap-y-2 lg:py-2  py-3 lg:flex-row items-center px-10 justify-between border 
@@ -146,11 +203,28 @@ const TopTenVocal: React.FC = () => {
                     <h1 className=' text-black font-thin text-lg leading-6 mb-6 lg:mb-[69px] mx-auto ' >Our bi-weekly top-10 list features the popular artists coming up in our network, great for club nights and gigs to artist signings.</h1>
                 </div>
                 <div>
-                    <Link href="/all-vocal-musick" >
-                        <button className=" bg-black border border-white font-thin w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer mb-10 ">
-                            SEE ALL
-                        </button>
-                    </Link>
+
+                    {audioData.length > 10 && (
+                        <div className="flex flex-col items-center space-y-4 mb-10">
+                            {visibleData < audioData.length && (
+                                <button
+                                    onClick={() => setVisibleData((prev) => prev + 10)}
+                                    className="bg-black border border-white font-thin w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer"
+                                >
+                                    SEE ALL
+                                </button>
+                            )}
+
+                            {visibleData > 10 && (
+                                <button
+                                    onClick={() => setVisibleData(10)}
+                                    className="bg-black border border-white font-thin w-[194px] text-white py-2 rounded-2xl lg:text-lg cursor-pointer"
+                                >
+                                    SEE LESS
+                                </button>
+                            )}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

@@ -80,6 +80,69 @@ const singers: Singer[] = [
             "With a velvet voice and heartfelt lyrics, Aria Moon creates a soulful vibe that resonates with deep emotions and chill melodies.",
         image: "/images/tune/tuneBanner/manageTune.png",
     },
+    {
+        id: 5,
+        name: "Aria Moon",
+        role: "Neo Soul Artist",
+        genre: "R&B",
+        description:
+            "With a velvet voice and heartfelt lyrics, Aria Moon creates a soulful vibe that resonates with deep emotions and chill melodies.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+    {
+        id: 6,
+        name: "Aria Moon",
+        role: "Neo Soul Artist",
+        genre: "R&B",
+        description:
+            "With a velvet voice and heartfelt lyrics, Aria Moon creates a soulful vibe that resonates with deep emotions and chill melodies.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+    {
+        id: 7,
+        name: "Aria Moon",
+        role: "Neo Soul Artist",
+        genre: "R&B",
+        description:
+            "With a velvet voice and heartfelt lyrics, Aria Moon creates a soulful vibe that resonates with deep emotions and chill melodies.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+    {
+        id: 8,
+        name: "Aria Moon",
+        role: "Neo Soul Artist",
+        genre: "R&B",
+        description:
+            "With a velvet voice and heartfelt lyrics, Aria Moon creates a soulful vibe that resonates with deep emotions and chill melodies.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+    {
+        id: 9,
+        name: "Aria Moon",
+        role: "Neo Soul Artist",
+        genre: "R&B",
+        description:
+            "With a velvet voice and heartfelt lyrics, Aria Moon creates a soulful vibe that resonates with deep emotions and chill melodies.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+    {
+        id: 10,
+        name: "Aria Moon",
+        role: "Neo Soul Artist",
+        genre: "R&B",
+        description:
+            "With a velvet voice and heartfelt lyrics, Aria Moon creates a soulful vibe that resonates with deep emotions and chill melodies.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+    {
+        id: 11,
+        name: "Aria Moon",
+        role: "Neo Soul Artist",
+        genre: "R&B",
+        description:
+            "With a velvet voice and heartfelt lyrics, Aria Moon creates a soulful vibe that resonates with deep emotions and chill melodies.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
 ];
 
 const BrowseArtist = () => {
@@ -90,6 +153,7 @@ const BrowseArtist = () => {
     const licenseRef = useRef<HTMLDivElement>(null);
     const typeRef = useRef<HTMLDivElement>(null);
     const latestRef = useRef<HTMLDivElement>(null);
+    const [visibleCount, setVisibleCount] = useState(8);
 
 
     // Genre 
@@ -1089,7 +1153,7 @@ const BrowseArtist = () => {
 
 
             <div className="mt-6 lg:mt-14 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-12">
-                {singers.map((singer) => (
+                {singers.slice(0, visibleCount).map((singer) => (
                     <div key={singer.id} className="transition-transform duration-300 hover:-translate-y-1 mx-auto">
                         <div className="w-full max-w-[357px] rounded-md p-5 bg-[#222222]">
                             <Image
@@ -1128,16 +1192,22 @@ const BrowseArtist = () => {
 
 
 
-            <div className='  mt-14 mb-20 grid lg:grid-cols-2 items-center lg:space-y-0 space-y-4  ' >
-                <div>
-                    <h1 className=' text-[#818080] text-sm lg:text-lg ' >*New Vocals Added Monthly</h1>
-                    <h1 className=' lg:text-3xl text-xl text-[#E7F056] leading-9 font-thin ' >Notify me</h1>
+            <div>
+
+                <div className='  mt-14 mb-20 grid lg:grid-cols-2 items-center lg:space-y-0 space-y-4  ' >
+                    <div>
+                        <h1 className=' text-[#818080] text-sm lg:text-lg ' >*New Vocals Added Monthly</h1>
+                        <h1 className=' lg:text-3xl text-xl text-[#E7F056] leading-9 font-thin ' >Notify me</h1>
+                    </div>
+
+                    {visibleCount < singers.length && (<button  onClick={()=>setVisibleCount(prev=>prev+8)} className=' w-[40%] rounded-2xl border border-white text-white lg:px-6 px-3 py-2 lg:py-3 text-sm lg:text-lg cursor-pointer   ' >LOAD MORE ARTISTS</button>)}
+
                 </div>
-                <div  >
-                    <Link href={""}>
-                        <button className=' rounded-2xl border border-white text-white lg:px-6 px-3 py-2 lg:py-3 text-sm lg:text-lg cursor-pointer   ' >LOAD MORE ARTISTS</button>
-                    </Link>
-                </div>
+
+            </div>
+
+            <div  >
+
             </div>
 
 
