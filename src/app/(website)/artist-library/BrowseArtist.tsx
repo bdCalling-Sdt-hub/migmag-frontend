@@ -1231,25 +1231,32 @@ const BrowseArtist = () => {
 
 
 
-            <div className='  flex  flex-col gap-4 lg:flex-row justify-between items-center lg:mt-20 mt-10   ' >
-                <div className=' bg-[#504E4E] pl-2.5 pr-20 pb-14 rounded-md lg:h-[335px] ' >
-                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Vetted by us</h1>
-                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
-                        <p>Work with singers - vetted by us for skill and quality.</p>
+            <div className="flex flex-col gap-6 lg:flex-row justify-between items-stretch lg:mt-20 mt-10">
+                {[
+                    {
+                        title: "Vetted by us",
+                        description: "Work with singers - vetted by us for skill and quality.",
+                    },
+                    {
+                        title: "Bulletproof contracts",
+                        description:
+                            "Our downloadable contracts are signed electronically at the time of purchase and give you full flexibility with your new vocals.",
+                    },
+                    {
+                        title: "Delivered in 3 - 10 days",
+                        description: "Our vocalists will deliver the recording within 10 days.",
+                    },
+                ].map((item, index) => (
+                    <div
+                        key={index}
+                        className="bg-[#504E4E] px-5 pt-10 pb-14 rounded-md lg:h-[335px] flex flex-col justify-between text-white"
+                    >
+                        <h1 className="text-xl lg:text-3xl font-bold lg:leading-9">{item.title}</h1>
+                        <div className="mt-6 text-sm lg:text-lg leading-6 max-w-[381px]">
+                            <p>{item.description}</p>
+                        </div>
                     </div>
-                </div>
-                <div className=' bg-[#504E4E] pl-2.5 pr-20 pb-14 rounded-md lg:h-[335px] ' >
-                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Bulletproof contracts</h1>
-                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
-                        <p>Our downloadable contracts are signed electronically at the time of purchase and give you full flexibility with your new vocals.</p>
-                    </div>
-                </div>
-                <div className=' bg-[#504E4E] pl-2.5 pr-20 pb-14 rounded-md lg:h-[335px] ' >
-                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Delivered in 3 - 10 days</h1>
-                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
-                        <p>Our vocalists will deliver the recording within 10 days.</p>
-                    </div>
-                </div>
+                ))}
             </div>
 
 
