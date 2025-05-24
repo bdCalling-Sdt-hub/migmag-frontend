@@ -32,6 +32,56 @@ type FilterType = {
     latest: string
 };
 
+
+
+type Singer = {
+    id: number;
+    name: string;
+    role: string;
+    genre: string;
+    description: string;
+    image: string;
+};
+
+const singers: Singer[] = [
+    {
+        id: 1,
+        name: "Ethan Levi",
+        role: "Singer - Songwriter",
+        genre: "Hip Hop",
+        description:
+            "A 28 year old singer-songwriter currently attending the Berklee School of Music in Boston, MA. He pulls inspiration from R&B and Neo Soul and has a powerful voice that’s perfect for any track.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+    {
+        id: 2,
+        name: "Sophia Grace",
+        role: "Vocalist",
+        genre: "Pop",
+        description:
+            "Sophia is a professional vocalist known for her clean high notes and engaging performance style, featured in over 30 commercial tracks worldwide.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+    {
+        id: 3,
+        name: "Jackson Cole",
+        role: "Rapper - Lyricist",
+        genre: "Trap",
+        description:
+            "Jackson brings powerful lyrical depth and rhythm, blending real-life experiences into catchy, hard-hitting verses with strong hooks.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+    {
+        id: 4,
+        name: "Aria Moon",
+        role: "Neo Soul Artist",
+        genre: "R&B",
+        description:
+            "With a velvet voice and heartfelt lyrics, Aria Moon creates a soulful vibe that resonates with deep emotions and chill melodies.",
+        image: "/images/tune/tuneBanner/manageTune.png",
+    },
+];
+
 const BrowseArtist = () => {
     const genreRef = useRef<HTMLDivElement>(null);
     const bpmRef = useRef<HTMLDivElement>(null);
@@ -550,7 +600,7 @@ const BrowseArtist = () => {
     }, [openBPM]);
 
     return (
-        <div className=" max-w-[1551px] mt-16 mx-auto px-4  border border-white ">
+        <div className=" max-w-[1551px] mt-16 mx-auto px-4   ">
             <div className=' mt-12 mb-6 ' >
                 <div className=' border border-white ' ></div>
             </div>
@@ -576,7 +626,7 @@ const BrowseArtist = () => {
             </div>
 
 
-            <div className=" grid xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-3 grid-cols-2 xl:gap-x-14 md:gap-x-10 gap-y-4 gap-x-5 mx-auto   mb-6  ">
+            <div className=" grid 2xl:grid-cols-7 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-3 grid-cols-2 xl:gap-x-14 md:gap-x-10 gap-y-4 gap-x-5 mx-auto   mb-6  ">
 
                 {/* genre  */}
 
@@ -1038,33 +1088,38 @@ const BrowseArtist = () => {
             {/* artist list  */}
 
 
-            <div className=' mt-14 ' >
-                <div className="transition-transform duration-300 hover:scale-105 overflow-x-hidden mx-auto ">
-                    <div className="w-[357px] rounded-md p-5 bg-[#222222]">
-                        <Image
-                            src="/images/tune/tuneBanner/manageTune.png"
-                            width={340}
-                            height={219}
-                            alt=".."
-                            className="object-cover rounded-md"
-                        />
-                        <div className="flex flex-row items-center justify-between mt-3.5">
-                            <h1 className="text-white text-lg leading-6">Ethan Levi</h1>
-                            <Link href="">
-                                <p className="flex flex-row items-center text-sm leading-6 text-white">
-                                    VIEW <span><ArrowRight /></span>
-                                </p>
-                            </Link>
-                        </div>
-                        <div className="mt-2">
-                            <p className="text-[#818080] text-lg leading-6">Singer - Songwriter</p>
-                            <p className="mt-2 text-[#818080] text-lg leading-6">Genre: Hip Hop</p>
-                        </div>
-                        <div className="mt-5 text-[#FFFFFF] text-[15px] leading-6 my-auto">
-                            A 28 year old singer-songwriter currently attending the Berklee School of Music in Boston, MA. He pulls inspiration from R&B and Neo Soul and has a powerful voice that’s perfect for any track.
+            <div className="mt-6 lg:mt-14 grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-12">
+                {singers.map((singer) => (
+                    <div key={singer.id} className="transition-transform duration-300 hover:-translate-y-1 mx-auto">
+                        <div className="w-full max-w-[357px] rounded-md p-5 bg-[#222222]">
+                            <Image
+                                src={singer.image}
+                                width={340}
+                                height={219}
+                                alt={`${singer.name} Image`}
+                                className="object-cover rounded-md"
+                            />
+
+                            <div className="flex flex-row items-center justify-between mt-3.5">
+                                <h1 className="text-white text-lg leading-6">{singer.name}</h1>
+                                <Link href={`/artist-library/${singer.id}`}>
+                                    <p className="flex flex-row items-center text-sm leading-6 text-white hover:underline">
+                                        VIEW <span className="ml-1"><ArrowRight /></span>
+                                    </p>
+                                </Link>
+                            </div>
+
+                            <div className="mt-2">
+                                <p className="text-[#818080] text-lg leading-6">{singer.role}</p>
+                                <p className="mt-2 text-[#818080] text-lg leading-6">Genre: {singer.genre}</p>
+                            </div>
+
+                            <div className="mt-5 text-[#FFFFFF] h-40 text-[15px] leading-6">
+                                {singer.description}
+                            </div>
                         </div>
                     </div>
-                </div>
+                ))}
             </div>
 
 
@@ -1073,111 +1128,138 @@ const BrowseArtist = () => {
 
 
 
-
-            <div className='  mt-14 mb-20 grid grid-cols-2 items-center hidden ' >
+            <div className='  mt-14 mb-20 grid lg:grid-cols-2 items-center lg:space-y-0 space-y-4  ' >
                 <div>
-                    <h1 className=' text-[#818080] text-lg ' >*New Vocals Added Monthly</h1>
-                    <h1 className=' text-3xl text-[#E7F056] leading-9 font-thin ' >Notify me</h1>
+                    <h1 className=' text-[#818080] text-sm lg:text-lg ' >*New Vocals Added Monthly</h1>
+                    <h1 className=' lg:text-3xl text-xl text-[#E7F056] leading-9 font-thin ' >Notify me</h1>
                 </div>
                 <div  >
                     <Link href={""}>
-                        <button className=' rounded-2xl border border-white text-white px-6 py-3 text-lg cursor-pointer   ' >LOAD MORE ARTISTS</button>
+                        <button className=' rounded-2xl border border-white text-white lg:px-6 px-3 py-2 lg:py-3 text-sm lg:text-lg cursor-pointer   ' >LOAD MORE ARTISTS</button>
                     </Link>
                 </div>
             </div>
 
 
-            <div className='  flex  flex-row justify-between items-center hidden  ' >
-                <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-14 rounded-md ' >
-                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >100% Royalty free</h1>
-                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
-                        <p>Use your vocals anywhere. No limits. Cleared for release. Keep all royalties.</p>
-                    </div>
+
+            {/* Want to hire our singers? */}
+
+
+
+
+            <div className="flex lg:flex-row-reverse flex-col justify-between relative lg:gap-5 lg:mt-40 items-stretch">
+
+                {/* Left side */}
+                <div className="flex-1 h-[90vh] ">
+                    <Image
+                        src="/images/home-page/coveredImg.png"
+                        alt="...."
+                        width={652}
+                        height={1000}
+                        className="object-cover h-full w-full rounded-lg "
+                    />
                 </div>
-                <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-14 rounded-md ' >
-                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Yours forever</h1>
-                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
-                        <p>Dry vocal stems, Licence and Invoice emailed after purchase. Instrumental at an extra cost. </p>
-                    </div>
-                </div>
-                <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-14 rounded-md ' >
-                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Vocal love gurantee</h1>
-                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
-                        <p>Don’t love your existing vocal. We’ll replace it with a new one!</p>
-                    </div>
-                </div>
-            </div>
 
-
-
-
-            <div className='  flex lg:flex-row flex-col items-start justify-between relative gap-5 mt-40 hidden ' >
-                {/* left side  */}
-                <div>
-                    <div className=' max-w-[411px] ' >
-                        <h1 className=' text-2xl lg:text-[35px] font-bold text-[#ffffff] leading-9 ' >
-                            We’ve got you <br /> covered
+                {/* Right side */}
+                <div className="flex-1 flex flex-col justify-between">
+                    <div>
+                        <h1 className="text-2xl lg:text-[35px] font-bold text-[#FFFFFF] leading-9">
+                            Want to hire our singers?
                         </h1>
-                    </div>
 
-                    <div className=' max-w-[478px] lg:mt-8 mt-3 ' >
-                        <h1 className=' lg:text-lg text-[#ffffff] leading-6 font-thin ' >Browse and purchase acapellas created by top singers from around the world. Use them to create original music that you can release and profit from.</h1>
-                    </div>
-
-
-
-                    <div className="max-w-[700px] mx-auto lg:mt-[50px] mt-7 lg:space-y-12 space-y-3 ">
-                        <div className=' flex flex-row gap-5  items-start  ' >
-                            <div className=' w-[50px] h-[47px]  rounded-full bg-[#201F1F] ' >
-
-                            </div>
-                            <div className=" transition duration-300 w-full ">
-                                <p className="text-[#ffffff] font-bold lg:text-xl mb-4">Premium-Quality Vocals</p>
-                                <p className="text-[#ffffff] font-light mt-4 lg:text-lg leading-7">
-                                    Perfectly edited by our industry-leading vocal editors to make your music the best it can be. 3 Vocal Takes and edited vocals are always included.
-                                </p>
-                            </div>
+                        <div className="max-w-[698px] lg:mt-8 mt-3">
+                            <h1 className="lg:text-lg text-[#fff] leading-6 font-thin">
+                                How it works: browse and purchase acapellas created by top singers from around the world.
+                                Use them to create original music that you can release and profit from.
+                            </h1>
                         </div>
 
-                        <div className=' flex flex-row gap-5  items-start  ' >
-                            <div className=' w-[50px] h-[47px]  rounded-full bg-[#201F1F] ' >
-
+                        <div className="max-w-[700px] mx-auto lg:mt-[50px] mt-7 lg:space-y-[72px] space-y-3">
+                            {/* Step 1 */}
+                            <div className="flex flex-row gap-5 items-start">
+                                <div className="lg:w-[50px] lg:h-[47px] rounded-full bg-[#D9D9D9]" />
+                                <div className="transition duration-300 w-full">
+                                    <p className="text-[#fff] font-bold lg:text-xl mb-4">Select a singer</p>
+                                    <p className="text-[#fff] font-light mt-4 lg:text-lg leading-7">
+                                        Perfectly edited by our industry-leading vocal editors to make your music the best it can be.
+                                        3 Vocal Takes and edited vocals are always included.
+                                    </p>
+                                </div>
                             </div>
-                            <div className=" transition duration-300 w-full ">
-                                <p className="text-[#ffffff] font-bold lg:text-xl mb-4">World-class Artists</p>
-                                <p className="text-[#ffffff] font-light mt-4 lg:text-lg leading-7">
-                                    All singers are fully verified and must meet our high quality standards regarding skill, lyrics and recording quality. Message and hire our artists for your projects.
-                                </p>
-                            </div>
-                        </div>
 
-                        <div className=' flex flex-row gap-5  items-start  ' >
-                            <div className=' w-[50px] h-[47px]  rounded-full bg-[#201F1F] ' >
-
+                            {/* Step 2 */}
+                            <div className="flex flex-row gap-5 items-start">
+                                <div className="lg:w-[50px] lg:h-[47px] rounded-full bg-[#D9D9D9]" />
+                                <div className="transition duration-300 w-full">
+                                    <p className="text-[#fff] font-bold lg:text-xl mb-4">Describe your project</p>
+                                    <p className="text-[#fff] font-light mt-4 lg:text-lg leading-7">
+                                        All singers are fully verified and must meet our high quality standards regarding skill,
+                                        lyrics and recording quality. Message and hire our artists for your projects.
+                                    </p>
+                                </div>
                             </div>
-                            <div className=" transition duration-300 w-full ">
-                                <p className="text-[#ffffff] font-bold lg:text-xl mb-4">Release Worldwide</p>
-                                <p className="text-[#ffffff] font-light mt-4 lg:text-lg leading-7">
-                                    Publish your new song on all streaming platforms, record labels, use commercially and never worry about royalties, they belong to you – 100%. Go beyond with Vocalfy.
-                                </p>
+
+                            {/* Step 3 */}
+                            <div className="flex flex-row gap-5 items-start">
+                                <div className="lg:w-[50px] lg:h-[47px] rounded-full bg-[#D9D9D9]" />
+                                <div className="transition duration-300 w-full">
+                                    <p className="text-[#fff] font-bold lg:text-xl mb-4">A few days later: Done</p>
+                                    <p className="text-[#fff] font-light mt-4 lg:text-lg leading-7">
+                                        Publish your new song on all streaming platforms, record labels, use commercially and never worry about royalties,
+                                        they belong to you – 100%. Go beyond with Vocalfy.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-
-
-
-
-                </div>
-                {/* right side  */}
-                <div>
-                    <Image src={"/images/home-page/coveredImg.png"} className=' object-cover rounded-lg block mx-auto ' width={652} height={654} alt='....' />
+                    {/* Button */}
+                    <div className="mt-7 lg:mt-[61px]">
+                        <Link href="">
+                            <button className="text-[#FFFFFF] text-lg px-5 py-2 rounded-2xl border border-[#FFFFFF] cursor-pointer">
+                                GET STARTED
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+            <div className='  flex  flex-col gap-4 lg:flex-row justify-between items-center lg:mt-20 mt-10   ' >
+                <div className=' bg-[#504E4E] pl-2.5 pr-20 pb-14 rounded-md lg:h-[335px] ' >
+                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Vetted by us</h1>
+                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
+                        <p>Work with singers - vetted by us for skill and quality.</p>
+                    </div>
+                </div>
+                <div className=' bg-[#504E4E] pl-2.5 pr-20 pb-14 rounded-md lg:h-[335px] ' >
+                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Bulletproof contracts</h1>
+                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
+                        <p>Our downloadable contracts are signed electronically at the time of purchase and give you full flexibility with your new vocals.</p>
+                    </div>
+                </div>
+                <div className=' bg-[#504E4E] pl-2.5 pr-20 pb-14 rounded-md lg:h-[335px] ' >
+                    <h1 className=' pt-44 text-3xl leading-9 text-white font-bold ' >Delivered in 3 - 10 days</h1>
+                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
+                        <p>Our vocalists will deliver the recording within 10 days.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
 
 
             <div
-                className=" bg-[url('/images/home-page/tunemImg.png')] bg-no-repeat bg-cover bg-center py-6 lg:pt-11 lg:pb-16 rounded-lg mt-16 lg:mt-[107px] relative overflow-hidden"
+                className=" my-16 bg-[url('/images/home-page/tunemImg.png')] bg-no-repeat bg-cover bg-center py-6 lg:pt-11 lg:pb-16 rounded-lg mt-16 lg:mt-[107px] relative overflow-hidden"
             >
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-black to-black/30 z-0"></div>
@@ -1187,19 +1269,17 @@ const BrowseArtist = () => {
                         TUNEM FOR ARTISTS
                     </h1>
                     <div className="mx-auto mt-5 lg:mt-16">
-                        <h1 className="text-center lg:text-7xl text-3xl text-white font-thin">
-                            GROW YOUR <br />
-                            REACH & AUDIENCE
+                        <h1 className="text-center lg:leading-24 uppercase lg:text-7xl text-3xl text-white font-thin">
+                            do you want to <br /> apply as a vocalist?
                         </h1>
                     </div>
                     <div className="max-w-[482px] mx-auto mt-3 lg:mt-9">
                         <p className="text-center text-white leading-6 lg:text-xl font-thin ">
-                            Whether you want to promote your own song, increase revenue or reach a
-                            wider audience, artists always benefit from our artists-first approach.
+                            We are very selective with who we work with as we value quality the most.Apply today and start earning money from your vocals.
                         </p>
                     </div>
                     <div>
-                        <button className="text-[#E7F056] lg:text-lg w-[194px] py-2 border border-white rounded-2xl block mx-auto mt-4 lg:mt-13">
+                        <button className="text-[#E7F056] lg:text-lg w-[194px] py-2 border border-[#E7F056] rounded-2xl block mx-auto mt-4 lg:mt-13">
                             <Link href={""}>GET STARTED</Link>
                         </button>
                     </div>

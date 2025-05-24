@@ -69,8 +69,22 @@ const Navbar: React.FC = () => {
 
                     <div className="relative">
                         <Link href="/cart">
-                            <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center" />
-                            <span className="absolute -top-1 -right-1 bg-lime-300 text-black text-xs w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                            <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center" >
+                                <span className=' text-white ' >
+
+                                    <svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1.41724H2.4242C3.30818 1.41724 4.0039 2.35284 3.93024 3.42928L3.25088 13.4493C3.13629 15.0891 4.19215 16.4975 5.53449 16.4975H14.2515C15.4302 16.4975 16.4615 15.3104 16.5515 13.8718L16.9935 6.32663C17.0917 4.65663 16.0604 3.2985 14.6935 3.2985H4.12669" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M12.6638 21.5378C13.2288 21.5378 13.6869 20.9748 13.6869 20.2802C13.6869 19.5857 13.2288 19.0227 12.6638 19.0227C12.0987 19.0227 11.6406 19.5857 11.6406 20.2802C11.6406 20.9748 12.0987 21.5378 12.6638 21.5378Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M6.11541 21.5378C6.68047 21.5378 7.13854 20.9748 7.13854 20.2802C7.13854 19.5857 6.68047 19.0227 6.11541 19.0227C5.55035 19.0227 5.09229 19.5857 5.09229 20.2802C5.09229 20.9748 5.55035 21.5378 6.11541 21.5378Z" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path d="M6.72949 7.45337H16.5515" stroke="white" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </span>
+
+                                <span className="absolute -top-1 -right-1 bg-lime-300 text-black text-xs w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                            </div>
+
+
                         </Link>
                     </div>
 
