@@ -224,26 +224,6 @@ const PurchasePage: React.FC = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     return (
         <div className=' max-w-[1312px] mx-auto  ' >
             <div className="text-white">
@@ -312,10 +292,10 @@ const PurchasePage: React.FC = () => {
                                 className={`p-4 rounded-md shadow ${index % 2 === 0 ? "bg-black" : "bg-gray-800"
                                     }`}
                             >
-                                <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
+                                <div className="flex flex-col items-start  gap-4">
 
                                     {/* Image + Centered Play Button */}
-                                    <div className="relative w-full lg:w-[93px] aspect-square flex-shrink-0">
+                                    <div className="relative w-full  aspect-square flex-shrink-0">
                                         <Image
                                             src={track.image || "/images/default.jpg"}
                                             alt={track.title}
