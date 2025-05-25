@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
-import { FiDownload, FiLock } from 'react-icons/fi';
+import { FiDownload } from 'react-icons/fi';
 
 interface Purchase {
     title: string;

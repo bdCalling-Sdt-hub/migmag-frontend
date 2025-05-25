@@ -1,5 +1,5 @@
 "use client"
-import Link from 'next/link'
+
 import React, { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
@@ -9,7 +9,7 @@ import ApplayTune from './ApplayTune'
 import ApplayVocalistFrom from './ApplayVocalistFrom'
 import CoreValue from './CoreValue'
 import ManageTune from './ManageTune'
-
+import Link from 'next/link'
 const page: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
     const pathname = usePathname();
@@ -174,12 +174,12 @@ const page: React.FC = () => {
 
                     </div>
                     <div className=' text-white font-bold lg:text-lg ml-2 mt-5 md:mt-8 lg:mt-20 leading-6 max-w-[605px] ' >
-                        <p>Whether you're an established artist or waiting for your big break, Voclio is for you. Save time – Easy and clear overview over your projects. Seamless payments to you. No fee. Instant payouts.
+                        <p>Whether you're an established artist or waiting for your big break, Voclio is for you. Save time  Easy and clear overview over your projects. Seamless payments to you. No fee. Instant payouts.
                         </p>
 
                     </div>
                     <div className=' mt-5 md:mt-8 lg:mt-16' >
-                        <Link className=' border border-[#FFFFFF] rounded-[17px] p-2 lg:p-4 text-white text-sm md:text-sm lg:text-lg  ' href={""}>APPLY NOW</Link>
+                        <Link className=' border border-[#FFFFFF] rounded-[17px] p-2 lg:p-4 text-white text-sm md:text-sm lg:text-lg  ' href={"/contact"}>APPLY NOW</Link>
                     </div>
                 </div>
 

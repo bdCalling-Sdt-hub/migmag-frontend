@@ -1,6 +1,5 @@
 "use client"
 import Image from 'next/image';
-import Link from 'next/link';
 import React, { useRef, useState } from 'react';
 import { CiPause1 } from 'react-icons/ci';
 import { FaPlay } from 'react-icons/fa';

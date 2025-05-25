@@ -76,10 +76,10 @@ const ArtistList: React.FC = () => {
         }
     ]
     return (
-        <div className="bg-[url('/images/home-page/artist/artistBgImg.png')] bg-no-repeat bg-cover bg-center  w-full">
+        <div className="bg-[url('/images/home-page/artist/artistBgImg.png')] bg-no-repeat bg-cover bg-center px-4  w-full">
             <div className=' max-w-[1539px]   mx-auto  ' >
                 <h1 className="text-white lg:text-lg lg:pt-9 pt-3 mx-auto ">POPULAR ARTISTS</h1>
-                <div className=' lg:my-10 my-4 grid lg:grid-cols-6 md:grid-cols-4 grid-cols-2  flex-col mx-auto lg:flex-row items-center justify-between gap-3 lg:gap-7     ' >
+                <div className=' lg:my-10 my-4 grid lg:grid-cols-6 md:grid-cols-4 grid-cols-1  flex-col mx-auto lg:flex-row items-center justify-between gap-3 lg:gap-7     ' >
                     {
                         singerData.slice(0, visibleData).map((item, i) => {
                             return (
@@ -92,7 +92,7 @@ const ArtistList: React.FC = () => {
                                         width={213}
                                         height={163}
                                         alt={item.name}
-                                        className="object-cover"
+                                        className="object-cover mx-auto w-full "
                                     />
                                     <div className='mt-2' >
                                         <h1 className=' lg:text-xl leading-6 text-[#000000] ' >

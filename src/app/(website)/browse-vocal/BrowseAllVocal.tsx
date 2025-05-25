@@ -532,7 +532,7 @@ const BrowseAllVocal = () => {
         (filter.type ? item.type === filter.type : true)
     );
 
-    const [visibleData,setVisibleData] = useState(10)
+    const [visibleData, setVisibleData] = useState(10)
 
     const clearSearch = () => {
         setFilter("")
@@ -1090,7 +1090,7 @@ const BrowseAllVocal = () => {
                                     </div>
                                 </td>
                                 <td className="lg:py-4 lg:px-6 px-3 ">
-                                    <h3 className="text-white lg:font-bold text-[10px] lg:text-xl lg:leading-6 ">{item.title}</h3>
+                                    <h3 className="text-white lg:font-bold text-[10px] lg:text-xl lg:leading-6 md:text-sm  ">{item.title}</h3>
                                 </td>
                                 <td className="lg:py-4 lg:px-6 px-3 ">
                                     <p className="text-white lg:font-bold text-[10px] lg:text-xl lg:leading-6">{item.artist}</p>
@@ -1143,30 +1143,30 @@ const BrowseAllVocal = () => {
                 </div>
                 <div  >
                     {
-                        visibleData<filteredData.length && (
-                            <button onClick={()=>{setVisibleData(prev=>prev+10)}} className=' mt-4 lg:mt-0 rounded-2xl border border-white text-white px-6 py-3 text-lg cursor-pointer   ' >LOAD MORE VOCALS</button>
+                        visibleData < filteredData.length && (
+                            <button onClick={() => { setVisibleData(prev => prev + 10) }} className=' mt-4 lg:mt-0 rounded-2xl border border-white text-white px-6 py-3 text-lg cursor-pointer   ' >LOAD MORE VOCALS</button>
                         )
                     }
                 </div>
             </div>
 
 
-            <div className='  flex flex-col lg:flex-row  space-y-5 justify-between items-center  ' >
+            <div className='  flex flex-col lg:flex-row   space-y-5 justify-between items-center  ' >
                 <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-6 lg:pb-14 rounded-md ' >
                     <h1 className=' lg:pt-44 pt-7 text-3xl leading-9 text-white font-bold ' >100% Royalty free</h1>
-                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
+                    <div className=' max-w-[381px]  mt-6 text-lg leading-6 text-white ' >
                         <p>Use your vocals anywhere. No limits. Cleared for release. Keep all royalties.</p>
                     </div>
                 </div>
                 <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-6 lg:pb-14 rounded-md ' >
                     <h1 className=' lg:pt-44 pt-7 text-3xl leading-9 text-white font-bold ' >Yours forever</h1>
-                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
+                    <div className=' max-w-[381px]  mt-6 text-lg leading-6 text-white ' >
                         <p>Dry vocal stems, Licence and Invoice emailed after purchase. Instrumental at an extra cost. </p>
                     </div>
                 </div>
                 <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-6 lg:pb-14 rounded-md ' >
                     <h1 className=' lg:pt-44 pt-7 text-3xl leading-9 text-white font-bold ' >Vocal love gurantee</h1>
-                    <div className=' max-w-[381px] mt-6 text-lg leading-6 text-white ' >
+                    <div className=' max-w-[381px]  mt-6 text-lg leading-6 text-white ' >
                         <p>Don’t love your existing vocal. We’ll replace it with a new one!</p>
                     </div>
                 </div>

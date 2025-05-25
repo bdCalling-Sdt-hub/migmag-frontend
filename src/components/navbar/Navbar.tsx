@@ -88,9 +88,9 @@ const Navbar: React.FC = () => {
                         </Link>
                     </div>
 
-                    <Link href={"/login"}><button className="bg-black text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:bg-gray-900">
+                    <button className="bg-black text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:bg-gray-900">
                         <Link href={"/login"}>Log in</Link>
-                    </button></Link>
+                    </button>
                 </nav>
             </div>
 
@@ -133,7 +133,9 @@ const Navbar: React.FC = () => {
                     <li><Link href="/artist-library">Artist Library</Link></li>
                     <li><Link href="/hire">Hire</Link></li>
                     <li><Link href="/cart">Cart (0)</Link></li>
-                    <li><button className="bg-black text-white px-6 py-2 rounded-full w-full">Log in</button></li>
+                    <li><button className="bg-black text-white px-6 py-2 rounded-full w-full">
+                        <Link href={"/login"}>Log in</Link>
+                    </button></li>
                 </ul>
             </div>
         </>
