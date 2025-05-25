@@ -266,18 +266,18 @@ const CartPage = () => {
                 </p>
 
                 <div className="mt-10">
-                    <div className="overflow-x-auto w-full">
+                    <div className="overflow-x-auto w-full lg:block hidden ">
                         {currentTracks.map((track) => (
                             <div
                                 key={track.id}
-                                onClick={() => openModal(track)}
+
                                 className="cursor-pointer flex flex-col lg:flex-row items-start lg:items-center justify-between bg-black text-white p-4 rounded-md mb-4 shadow hover:bg-[#1a1a1a] min-w-[350px]"
                             >
                                 {/* Image + Title/Artist */}
                                 <div className="flex items-start gap-4 w-full lg:w-auto">
                                     <div className="relative w-16 h-16 flex-shrink-0">
                                         <img src={track.image} alt="cover" className="w-full h-full object-cover rounded-md" />
-                                        <FaPlay className="absolute inset-0 m-auto text-yellow-400 w-6 h-6" />
+                                        <FaPlay onClick={() => openModal(track)} className="absolute inset-0 m-auto text-yellow-400 w-6 h-6" />
                                     </div>
                                     <div>
                                         <div className="font-bold text-base">{track.title}</div>
@@ -298,15 +298,78 @@ const CartPage = () => {
                                     </span>
                                 </div>
 
+
+                                <div>
+                                    <FaShoppingCart size={24} className="text-yellow-300 cursor-pointer" />
+                                </div>
+
                                 {/* Price + Cart */}
                                 <div className="flex items-center gap-4 mt-4 lg:mt-0 lg:justify-end w-full lg:w-auto">
-                                    <FaShoppingCart className="text-yellow-300 cursor-pointer" />
+
                                     <span className="bg-yellow-300 text-black font-bold px-4 py-1 rounded-full">
                                         €{track.price}
                                     </span>
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    {/* small device  */}
+
+                    <div className="overflow-x-auto w-full lg:hidden block ">
+                        {currentTracks.map((track) => (
+                            <div
+                                key={track.id}
+
+                                className="cursor-pointer flex flex-col lg:flex-row items-start lg:items-center justify-between bg-black text-white p-4 rounded-md mb-4 shadow hover:bg-[#1a1a1a] min-w-[350px]"
+                            >
+                                {/* Image + Title/Artist */}
+                                <div className="">
+                                    <div className="relative w-full h-full flex-shrink-0">
+                                        <img src={track.image} alt="cover" className="w-full h-full object-cover rounded-md" />
+                                        <FaPlay onClick={() => openModal(track)} className="absolute inset-0 m-auto text-yellow-400 w-6 h-6" />
+                                    </div>
+
+                                </div>
+                                <div className=' my-3  ' >
+                                    <h1 className="font-bold text-base text-left ">{track.title}</h1>
+                                    <h1 className="text-sm text-gray-300 text-left ">{track.artist}</h1>
+                                </div>
+
+                                {/* Track Info */}
+                                <div className=" text-sm text-gray-200  flex flex-wrap gap-x-5  ">
+                                    <span>{track.genre}</span>
+                                    <span>{track.bpm}</span>
+                                    <span>{track.key}</span>
+                                    <span>{track.gender}</span>
+                                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${licenseColors[track.license]}`}>
+                                        {track.license}
+                                    </span>
+                                    <span><FaShoppingCart size={24} className="text-yellow-300 cursor-pointer" /></span>
+                                    <span className="bg-yellow-300 text-black font-bold px-4 py-1 rounded-full">
+                                        €{track.price}
+                                    </span>
+                                </div>
+
+
+                                <div>
+
+                                </div>
+
+
+                            </div>
+                        ))}
+                    </div>
+
+
+
+
+
+
+
+
+                    <div>
+
                     </div>
 
                     <div className="flex justify-between items-center mt-6 text-sm text-[#344054]">
@@ -425,7 +488,7 @@ const CartPage = () => {
 
 
 
-                
+
             </div>
         </div>
     );

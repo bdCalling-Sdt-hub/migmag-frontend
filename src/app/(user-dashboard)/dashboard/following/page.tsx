@@ -1,9 +1,10 @@
 import React from 'react'
+import FollowingPage from './FollowingPage'
 
 const page : React.FC = () => {
   return (
     <div>
-      <h1>Following page</h1>
+      <FollowingPage/>
     </div>
   )
 }

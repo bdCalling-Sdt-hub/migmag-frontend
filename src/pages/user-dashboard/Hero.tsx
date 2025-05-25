@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
 
                 {/* Right Section: Followed Artist */}
                 <div className="bg-[#333333] rounded-md p-6 md:p-8 w-full space-y-10 ">
-                    <h1 className="text-white text-lg mb-4">Artists you're following <span className="text-[#E7F056]">(17)</span></h1>
+                    <h1 className="text-white text-lg mb-4">Artists you are following <span className="text-[#E7F056]">(17)</span></h1>
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
                         <Image
                             src="/images/home-page/trending-img/slide-1.png"

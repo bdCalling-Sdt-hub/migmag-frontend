@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
 
 const RegisterFrom: React.FC = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +44,7 @@ const RegisterFrom: React.FC = () => {
                         <p className=' mt-2 text-[#3A3A3A] text-sm text-center ' >Please register with valid information for create account.</p>
                     </div>
                     <div className='lg:mt-16 mt-4 ' >
-                        <form className='space-y-4 ' >
+                        <form onSubmit={handleSubmit} className='space-y-4 ' >
                             {/* name  */}
                             <div className="relative">
                                 <label htmlFor='name' className="mb-2 text-[#121212] font-semibold text-[16px] block ">Name</label>

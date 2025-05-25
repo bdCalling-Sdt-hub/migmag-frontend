@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
 
 const LoginPage: React.FC = () => {
     const [showPassword, setShowPassword] = useState(false);

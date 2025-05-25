@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react';
 import { FaDownload, FaPlay } from 'react-icons/fa';
 import Image from 'next/image';
@@ -170,7 +172,7 @@ const WishListPage: React.FC = () => {
                                 {/* Download */}
                                 <td className="px-4 py-3 text-center">
                                     <button
-                                        // onClick={() => downloadAudio(track.audio, track.title)}
+                                        onClick={() => downloadAudio(track.audio, track.title)}
                                         className="w-10 h-10 rounded-full bg-[#80BC02] flex justify-center items-center cursor-pointer"
                                     >
                                         <FaDownload />
@@ -185,6 +187,9 @@ const WishListPage: React.FC = () => {
         <div className=' mt-20 ' >
             <AuthFooter></AuthFooter>
         </div>
+
+        
+        
         </div>
     );
 };

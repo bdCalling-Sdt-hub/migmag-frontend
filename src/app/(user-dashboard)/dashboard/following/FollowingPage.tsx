@@ -2,7 +2,7 @@
 
 
 import { useEffect, useRef, useState, Fragment } from 'react';
-import { FaPlay, FaPause, FaStepBackward, FaStepForward } from 'react-icons/fa';
+import { FaPlay, FaPause, FaStepBackward, FaStepForward, FaShoppingCart } from 'react-icons/fa';
 import WaveSurfer from 'wavesurfer.js';
 import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
@@ -95,8 +95,13 @@ const songs: Song[] = [
 
 
 
-const ResentSearch: React.FC = () => {
+const FollowingPage: React.FC = () => {
 
+    const itemsPerPage = 5;
+    const [currentPage, setCurrentPage] = useState(1);
+    const totalPages = Math.ceil(songs.length / itemsPerPage);
+    const start = (currentPage - 1) * itemsPerPage;
+    const currentTracks = songs.slice(start, start + itemsPerPage);
 
     const [selectedTrack, setSelectedTrack] = useState<Song | null>(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -197,22 +202,20 @@ const ResentSearch: React.FC = () => {
         // </main>
         <main>
             <div>
-                <div className=' text-2xl text-[#818080] font-bold leading-6 ' >Your recent searches</div>
-                <div className=' my-7 border-2 border-[#333333] ' ></div>
+                <h1 className=' text-[#FFFFFF] text-lg font-medium mb-5 ' >Artists your following <span className=' text-[#818080] ' >(17)</span> </h1>
+
             </div>
-            <div className=" grid grid-cols-1 lg:grid-cols-3 gap-4 ">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 ">
                 {songs.map((song, index) => (
                     <div
                         key={index}
-                        className="bg-[#333333] w-[100%]  p-4 rounded-md"
+                        className="bg-[#333333]   p-4 rounded-md"
                     >
                         <div className="flex items-center  gap-x-5">
                             <div>
-                                <Image
+                                <img
                                     src={song.image}
                                     alt={song.title}
-                                    width={93}
-                                    height={95}
                                     className="object-cover w-[93px] h-[95px] rounded-md"
                                 />
                             </div>
@@ -358,4 +361,4 @@ const ResentSearch: React.FC = () => {
         </main>
     );
 }
-export default ResentSearch
+export default FollowingPage
