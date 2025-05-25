@@ -24,7 +24,7 @@ export type Track = {
 export const tracks: Track[] = [
     {
         id: 1,
-        image: '/images/home-page/artist/singer-8.png',
+        image: '/images/home-page/artist/singer-2.png',
         title: 'Lost In The Night',
         artist: 'Barbie Mack',
         genre: 'Cover',
@@ -36,7 +36,7 @@ export const tracks: Track[] = [
     },
     {
         id: 2,
-        image: '/images/home-page/artist/singer-8.png',
+        image: '/images/home-page/artist/singer-2.png',
         title: 'Lost In The Night',
         artist: 'Barbie Mack',
         genre: 'Slap',
@@ -48,7 +48,7 @@ export const tracks: Track[] = [
     },
     {
         id: 3,
-        image: '/images/home-page/artist/singer-8.png',
+        image: '/images/home-page/artist/singer-2.png',
         title: 'Lost In The Night',
         artist: 'Barbie Mack',
         genre: 'Cover',
@@ -60,7 +60,7 @@ export const tracks: Track[] = [
     },
     {
         id: 4,
-        image: '/images/home-page/artist/singer-8.png',
+        image: '/images/home-page/artist/singer-2.png',
         title: 'Lost In The Night',
         artist: 'Barbie Mack',
         genre: 'House',
@@ -72,7 +72,7 @@ export const tracks: Track[] = [
     },
     {
         id: 5,
-        image: '/images/home-page/artist/singer-8.png',
+        image: '/images/home-page/artist/singer-2.png',
         title: 'Lost In The Night',
         artist: 'Barbie Mack',
         genre: 'Cover',
@@ -84,7 +84,7 @@ export const tracks: Track[] = [
     },
     {
         id: 6,
-        image: '/images/home-page/artist/singer-8.png',
+        image: '/images/home-page/artist/singer-2.png',
         title: 'Lost In The Night',
         artist: 'Barbie Mack',
         genre: 'House',
@@ -245,72 +245,125 @@ const PurchasePage: React.FC = () => {
 
 
     return (
-        <>
-            <div className="    text-white">
-                <div className=" overflow-x-auto">
-                    <table className="min-w-full table-auto border-collapse text-white text-left">
-                        {/* Table Head */}
-                        <thead className="bg-gray-900 text-gray-300 text-lg font-semibold">
-                            <tr>
-                                {/* <th className="px-4 py-3 w-[93px]"></th>
-                            <th className="px-6 py-3">Title</th>
-                            <th className="px-6 py-3">Artist</th>
-                            <th className="px-6 py-3">Genre</th>
-                            <th className="px-6 py-3">BPM</th>
-                            <th className="px-6 py-3">Key</th>
-                            <th className="px-6 py-3">Gender</th>
-                            <th className="px-4 py-3 text-center">License</th>
-                            <th className="px-4 py-3 text-center">Download</th> */}
-                            </tr>
-                        </thead>
+        <div className=' max-w-[1312px] mx-auto  ' >
+            <div className="text-white">
+                <div className="space-y-4  ">
+                    <div className="hidden xl:block space-y-4">
+                        {tracks.map((track, index) => (
+                            <div
+                                key={track.id}
+                                className={`grid grid-cols-11 items-center gap-4 p-4 rounded-md shadow ${index % 2 === 0 ? "bg-black" : "bg-gray-800"
+                                    }`}
+                            >
+                                {/* Image + Play */}
+                                <div className="relative col-span-1 mt-6 w-[93px] h-[91px]">
+                                    <Image
+                                        src={track.image || "/images/default.jpg"}
+                                        alt={track.title}
+                                        className="object-cover rounded-md w-full -mt-5 h-full"
+                                        width={93}
+                                        height={91}
+                                    />
+                                    <button
+                                        onClick={() => openModal(track)}
+                                        className="absolute cursor-pointer top-0 left-0 w-12 h-12 mt-2 ml-6 rounded-full bg-opacity-40 border border-[#E7F056] hover:bg-opacity-60 flex items-center justify-center transition"
+                                    >
+                                        <FaPlay className="text-[#E7F056]" />
+                                    </button>
+                                </div>
 
-                        {/* Table Body */}
-                        <tbody className=' space-y-5 ' >
-                            {tracks.map((track, index) => (
-                                <tr key={track.id} className={index % 2 === 0 ? "bg-black" : "bg-gray-800"}>
-                                    {/* Image + Play */}
-                                    <td className="px-4 py-3">
-                                        <div className="relative w-[93px] h-[91px]">
-                                            <Image
-                                                src={track.image || "/images/default.jpg"}
-                                                alt={track.title}
-                                                className="object-cover rounded-md w-full h-full"
-                                                width={93}
-                                                height={91}
-                                            />
-                                            <button onClick={()=>{openModal(track)}} className="absolute cursor-pointer mt-2 ml-6 inset-0 flex items-center justify-center w-12 h-12 rounded-full bg-opacity-40 border border-[#E7F056] hover:bg-opacity-60 transition">
-                                                <FaPlay className="text-[#E7F056]" />
-                                            </button>
-                                        </div>
-                                    </td>
+                                {/* Track Info Columns */}
+                                <div className="text-left col-span-2 w-full font-bold text-white text-base">{track.title}</div>
+                                <div className="text-left col-span-1 text-white text-base">{track.artist}</div>
+                                <div className="text-left col-span-1 text-white text-base">{track.genre}</div>
+                                <div className="text-left col-span-1 text-white text-base">{track.bpm}</div>
+                                <div className="text-left col-span-1 text-white text-base">{track.key}</div>
+                                <div className="text-left col-span-1 text-white text-base">{track.gender}</div>
 
-                                    {/* Track Info */}
-                                    <td className="px-6 py-3 text-xl font-bold">{track.title}</td>
-                                    <td className="px-6 py-3 text-xl">{track.artist}</td>
-                                    <td className="px-6 py-3 text-xl">{track.genre}</td>
-                                    <td className="px-6 py-3 text-xl">{track.bpm}</td>
-                                    <td className="px-6 py-3 text-xl">{track.key}</td>
-                                    <td className="px-6 py-3 text-xl">{track.gender}</td>
+                                {/* License */}
+                                <div className=" col-span-2  text-left">
+                                    <h1 className='  ' ><LicenseBadge type={track.license} /></h1>
+                                </div>
 
-                                    {/* License */}
-                                    <td className="px-4 py-3 text-center">
-                                        <LicenseBadge type={track.license} />
-                                    </td>
+                                {/* Download */}
+                                <div className="col-span-1 flex justify-start">
+                                    <button
+                                        onClick={() => downloadAudio(track.audio, track.title)}
+                                        className="w-10 h-10 rounded-full bg-[#80BC02] flex justify-center items-center cursor-pointer"
+                                    >
+                                        <FaDownload />
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
 
-                                    {/* Download */}
-                                    <td className="px-4 py-3 text-center">
+                </div>
+
+
+                {/* small device  */}
+
+
+                <div className="space-y-4  ">
+                    <div className="block xl:hidden space-y-4">
+                        {tracks.map((track, index) => (
+                            <div
+                                key={track.id}
+                                className={`p-4 rounded-md shadow ${index % 2 === 0 ? "bg-black" : "bg-gray-800"
+                                    }`}
+                            >
+                                <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
+
+                                    {/* Image + Centered Play Button */}
+                                    <div className="relative w-full lg:w-[93px] aspect-square flex-shrink-0">
+                                        <Image
+                                            src={track.image || "/images/default.jpg"}
+                                            alt={track.title}
+                                            className="object-cover rounded-md w-full h-full"
+                                            layout="fill"
+                                        />
+                                        <button
+                                            onClick={() => openModal(track)}
+                                            className="absolute cursor-pointer inset-0 flex items-center justify-center bg-black/30 hover:bg-black/50 rounded-md"
+                                        >
+                                            <FaPlay className="text-[#E7F056] w-10 h-10 p-2 border-2 border-amber-300 rounded-full" />
+                                        </button>
+                                    </div>
+
+                                    <div className="font-bold text-left">{track.title}</div>
+                                    <div className="text-left">{track.artist}</div>
+
+                                    {/* Track Info Grid */}
+                                    <div className=" text-white text-base flex flex-wrap items-center gap-x-8 gap-y-3 ">
+
+                                        <div className="text-left">{track.genre}</div>
+                                        <div className="text-left">{track.bpm}</div>
+                                        <div className="text-left">{track.key}</div>
+                                        <div className="text-left">{track.gender}</div>
+                                        <h1><LicenseBadge type={track.license} /></h1>
+                                        {/* Download Button */}
                                         <button
                                             onClick={() => downloadAudio(track.audio, track.title)}
                                             className="w-10 h-10 rounded-full bg-[#80BC02] flex justify-center items-center cursor-pointer"
                                         >
                                             <FaDownload />
                                         </button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                                    </div>
+
+                                    {/* License */}
+
+
+
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
+
+
+
+
             </div>
 
             {/* player  */}
@@ -390,7 +443,7 @@ const PurchasePage: React.FC = () => {
                                                 <div>
                                                     <span>
                                                         <svg width="37" height="33" viewBox="0 0 37 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M19.1105 31.2013C18.5307 31.4059 17.5757 31.4059 16.9959 31.2013C12.0505 29.513 1 22.47 1 10.5327C1 5.2633 5.24625 1 10.4816 1C13.5853 1 16.3308 2.50068 18.0532 4.81992C19.7756 2.50068 22.5382 1 25.6249 1C30.8602 1 35.1064 5.2633 35.1064 10.5327C35.1064 22.47 24.056 29.513 19.1105 31.2013Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M19.1105 31.2013C18.5307 31.4059 17.5757 31.4059 16.9959 31.2013C12.0505 29.513 1 22.47 1 10.5327C1 5.2633 5.24625 1 10.4816 1C13.5853 1 16.3308 2.50068 18.0532 4.81992C19.7756 2.50068 22.5382 1 25.6249 1C30.8602 1 35.1064 5.2633 35.1064 10.5327C35.1064 22.47 24.056 29.513 19.1105 31.2013Z" stroke="white" stroke-width="2" strokeLinecap="round" strokeLinejoin="round" />
                                                         </svg>
 
                                                     </span>
@@ -429,7 +482,7 @@ const PurchasePage: React.FC = () => {
             {/* <div className='mt-20' >
                 <AuthFooter></AuthFooter>
             </div> */}
-        </>
+        </div>
     );
 };
 
