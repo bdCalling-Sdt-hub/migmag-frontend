@@ -74,18 +74,18 @@ const PurchasesTable = () => {
                 <table className="w-full text-left">
                     <thead className="text-[#E7F056] text-sm">
                         <tr className="border-b border-[#333]">
-                            <th className="py-2 text-[16px] text-[#E7F056]">TITLE</th>
-                            <th className="py-2 text-[16px] text-[#E7F056]">ARTIST</th>
-                            <th className="py-2 text-[16px] text-[#E7F056]">LICENSE</th>
-                            <th className="py-2 text-[16px] text-[#E7F056]">CONTRACT</th>
-                            <th className="py-2 text-[16px] text-[#E7F056]  "></th>
-                            <th className="py-2 text-[16px] text-[#E7F056]  ">DOWNLOAD</th>
+                            <th className="py-2 text-xs lg:text-[16px] text-[#E7F056]">TITLE</th>
+                            <th className="py-2 text-xs lg:text-[16px] text-[#E7F056]">ARTIST</th>
+                            <th className="py-2 text-xs lg:text-[16px] text-[#E7F056]">LICENSE</th>
+                            <th className="py-2 text-xs lg:text-[16px] text-[#E7F056]">CONTRACT</th>
+                            <th className="py-2 text-xs lg:text-[16px] text-[#E7F056]  "></th>
+                            <th className="py-2 text-xs lg:text-[16px] text-[#E7F056]  ">DOWNLOAD</th>
                         </tr>
                     </thead>
                     <tbody className="text-sm  ">
                         {purchases.map((item, index) => (
                             <tr key={index} className="border-b border-[#333] ">
-                                <td className="py-4 text-[#FFFFFF] font-bold leading-6 text-[16px] underline">
+                                <td className="py-4 text-[#FFFFFF] font-bold leading-6 text-xs lg:text-[16px] underline">
                                     {item.title}
                                 </td>
                                 <td className="py-4 text-[#818080] text-[16px] leading-6">

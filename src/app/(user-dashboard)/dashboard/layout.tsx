@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 import Sidebar from "@/components/sidebar/Sidebar";
+import Footer from './../../../components/footer/Footer';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -159,6 +160,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
                 {/* On mobile, Sidebar handles its own fixed positioning and toggle */}
             </main>
+            {/* <div className=' bg-white ' >
+                <Footer></Footer>
+            </div> */}
         </div>
     );
 };
