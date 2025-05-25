@@ -4,7 +4,7 @@ import Link from 'next/link'
 const HomeBanner: React.FC = () => {
     return (
         <div className=' max-w-[1519px] mx-auto ' >
-            <div className="lg:mt-[75px]   flex flex-col-reverse lg:flex-row  justify-between gap-x-10 lg:gap-0">
+            <div className="lg:mt-[75px] mt-10  flex flex-col-reverse lg:flex-row  justify-between gap-x-10 lg:gap-0">
                 {/* Left Side */}
                 <div className="max-w-[658px] lg:mt-24  text-center lg:text-left">
                     <h1 className="text-[36px] md:text-[46px] lg:text-[56px] text-[#000000] leading-[1.2] uppercase font-bold">

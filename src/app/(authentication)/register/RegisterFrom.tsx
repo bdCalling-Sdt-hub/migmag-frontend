@@ -153,7 +153,7 @@ const RegisterFrom: React.FC = () => {
                             </div>
                             <button
                                 type="submit"
-                                className="w-full font-bold text-[#3A3A3A] bg-[#E7F056] text-xl py-3 px-9 rounded-2xl transition mt-4 lg:mt-16 "
+                                className="w-full cursor-pointer font-bold text-[#3A3A3A] bg-[#E7F056] text-xl py-3 px-9 rounded-2xl transition mt-4 lg:mt-16 "
                             >
                                 Register
                             </button>

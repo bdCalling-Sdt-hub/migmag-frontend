@@ -26,7 +26,7 @@ const Sidebar: React.FC = () => {
         <>
             {/* Hamburger button - visible only on mobile */}
             <button
-                className="fixed top-20 left-4 z-50 lg:hidden p-2 rounded-md text-white bg-gray-800"
+                className="fixed top-20 left-4 z-50 2xl:hidden p-2 rounded-md text-white bg-gray-800"
                 onClick={() => setIsOpen(true)}
                 aria-label="Open sidebar menu"
             >
@@ -36,7 +36,7 @@ const Sidebar: React.FC = () => {
             {/* Overlay when sidebar is open on mobile */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
+                    className="fixed inset-0 bg-black bg-opacity-50 z-40 2xl:hidden"
                     onClick={() => setIsOpen(false)}
                 />
             )}
@@ -44,13 +44,13 @@ const Sidebar: React.FC = () => {
             {/* Sidebar */}
             <aside
                 className={`
-          fixed top-16 left-0 lg:top-32 lg:left-10 bg-[#2C2C2C] text-white w-64 p-4 flex flex-col justify-between
+          fixed top-16 left-0 2xl:top-32 2xl:left-10 bg-[#2C2C2C] text-white w-64 p-4 flex flex-col justify-between
           transition-transform duration-300 ease-in-out z-50
-          ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
+          ${isOpen ? "translate-x-0" : "-translate-x-full 2xl:translate-x-0"}
         `}
             >
                 {/* Mobile header with close button */}
-                <div className="flex justify-between items-center mb-8 lg:hidden">
+                <div className="flex justify-between items-center mb-8 2xl:hidden">
                     <h2 className="text-lg font-semibold">
                         Welcome back
                         <br />
@@ -66,7 +66,7 @@ const Sidebar: React.FC = () => {
                 </div>
 
                 {/* Desktop header */}
-                <div className="hidden lg:block mb-8">
+                <div className="hidden 2xl:block mb-8">
                     <h2 className="text-lg font-semibold">
                         Welcome back
                         <br />

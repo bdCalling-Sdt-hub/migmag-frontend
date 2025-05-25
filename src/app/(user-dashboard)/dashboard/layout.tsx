@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 import Sidebar from "@/components/sidebar/Sidebar";
-import Footer from './../../../components/footer/Footer';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -28,7 +27,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         setDrawerOpen(false)
     }, [pathname])
     return (
-        <div className=' bg-[#222222] ' >
+        <div className=' bg-[#222222] z-50 ' >
             <main className="w-full bg-[#222222] border border-black min-h-screen relative">
                 <div className=' fixed top-0 w-full  py-8 ' >
                     <div className='flex items-center justify-between  max-w-[1749px]  mx-auto px-4'>
@@ -56,7 +55,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                         </Link>
 
                         {/* Mobile Menu Button */}
-                        <div className="lg:hidden">
+                        <div className="2xl:hidden">
                             <button onClick={toggleDrawer}>
                                 <FiMenu className=' text-white ' size={23} />
                             </button>
@@ -148,7 +147,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 </div>
                 {/* Sidebar toggle button is inside Sidebar component (fixed) */}
 
-                <div className="lg:flex lg:gap-x-20 ">
+                <div className="2xl:flex 2xl:gap-x-20 ">
                     <div className=" w-[270px] px-4">
                         <Sidebar />
                     </div>
@@ -160,9 +159,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
                 {/* On mobile, Sidebar handles its own fixed positioning and toggle */}
             </main>
-            {/* <div className=' bg-white ' >
-                <Footer></Footer>
-            </div> */}
+
         </div>
     );
 };

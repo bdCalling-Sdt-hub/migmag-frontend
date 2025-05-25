@@ -226,7 +226,7 @@ const WishListPage: React.FC = () => {
 
 
     return (
-        <div className=' max-w-[1312px] mx-auto  ' >
+        <div className=' ' >
             <div className="text-white">
                 <div className="space-y-4  ">
                     <div className="hidden xl:block space-y-4">

@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             </div>
 
             {/* Main Flex Section */}
-            <div className="flex flex-col gap-6 lg:flex-row justify-between">
+            <div className="flex flex-col gap-6 2xl:flex-row justify-between">
                 {/* Left Section: Stats Cards */}
                 <>
                     <div className="flex flex-col md:flex-row gap-6  lg:max-w-[895px]">
@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
                 </>
 
                 {/* Right Section: Followed Artist */}
-                <div className="bg-[#333333] rounded-md p-6 md:p-8 w-full space-y-10 ">
+                <div className="bg-[#333333] rounded-md p-6 md:p-8 w-full space-y-10  ">
                     <h1 className="text-white text-lg mb-4">Artists you are following <span className="text-[#E7F056]">(17)</span></h1>
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
                         <Image
@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className='lg:max-w-[860px] w-full ' >
+            <div className='2xl:max-w-[860px] w-full  ' >
                 <UserPurchases></UserPurchases>
                 <ResentSearch></ResentSearch>
             </div>

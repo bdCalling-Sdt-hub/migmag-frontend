@@ -1,6 +1,7 @@
 "use client"
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
 
@@ -20,12 +21,16 @@ const LoginPage: React.FC = () => {
         }));
     };
 
+    const router = useRouter();
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!formData.terms) {
-            alert("Please accept the Terms and Conditions.");
-            return;
-        }
+        // if (!formData.terms) {
+        //     alert("Please accept the Terms and Conditions.");
+        //     return;
+        // }
+
+        router.push("/dashboard")
         
         console.log("Form Data Submitted:", formData);
     };
@@ -39,7 +44,7 @@ const LoginPage: React.FC = () => {
                         <p className=' mt-2 text-[#3A3A3A] text-sm text-center ' >Please register with valid information for create account.</p>
                     </div>
                     <div className='lg:mt-16 mt-4 ' >
-                        <form className='space-y-4 ' >
+                        <form onSubmit={handleSubmit} className='space-y-4 ' >
 
                             {/* email  */}
                             <div className="relative">
@@ -111,7 +116,7 @@ const LoginPage: React.FC = () => {
                             </div>
                             <button
                                 type="submit"
-                                className="w-full font-bold text-[#3A3A3A] bg-[#E7F056] text-xl py-3 px-9 rounded-2xl transition mt-4 lg:mt-16 "
+                                className="w-full cursor-pointer font-bold text-[#3A3A3A] bg-[#E7F056] text-xl py-3 px-9 rounded-2xl transition mt-4 lg:mt-16 "
                             >
                                 Login
                             </button>

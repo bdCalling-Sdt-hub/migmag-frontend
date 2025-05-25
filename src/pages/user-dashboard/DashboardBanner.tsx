@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Banner() {
     return (
-        <div className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-24">
+        <div className="flex flex-col 2xl:flex-row justify-between gap-6 2xl:gap-24">
             {/* Left Side - Banner */}
             <div className="relative w-full h-[280px] md:h-[350px] lg:max-w-[895px] lg:h-[278px]">
                 {/* Banner Image */}
@@ -53,7 +53,7 @@ export default function Banner() {
             </div>
 
             {/* Right Side */}
-            <div className="w-full flex flex-col justify-between lg:space-y-0 space-y-6 ">
+            <div className="w-full flex flex-col justify-between 2xl:space-y-6 space-y-6 ">
                 {/* Top Card */}
                 <div className="bg-[#333333] p-4 md:p-6 rounded-md max-h-[160px]">
                     <h1 className="text-white text-[18px] md:text-[22px] lg:text-[25px] leading-snug">
