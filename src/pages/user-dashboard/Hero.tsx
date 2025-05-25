@@ -118,7 +118,7 @@ const Hero: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className='lg:max-w-[860px]' >
+            <div className='lg:max-w-[860px] w-full ' >
                 <UserPurchases></UserPurchases>
                 <ResentSearch></ResentSearch>
             </div>

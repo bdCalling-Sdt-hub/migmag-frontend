@@ -332,6 +332,8 @@ const CartPage = () => {
                     </div>
                 </div>
 
+                {/* player  */}
+
                 <div className='px-4' >
                     <Transition appear show={isOpen} as={Fragment}>
                         <Dialog as="div" className="relative z-50" onClose={closeModal}>
@@ -420,6 +422,10 @@ const CartPage = () => {
                         </Dialog>
                     </Transition>
                 </div>
+
+
+
+                
             </div>
         </div>
     );
