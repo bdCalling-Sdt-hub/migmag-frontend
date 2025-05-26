@@ -14,7 +14,7 @@ interface AudioItem {
 
 const audioData: AudioItem[] = [
     {
-        id: 3,
+        id: 15,
         title: 'Rock Anthem',
         name: 'Bujhina Toh Tai',
         price: '$8',
@@ -22,7 +22,7 @@ const audioData: AudioItem[] = [
         audio: '/images/home-page/audio-1.mp3',
     },
     {
-        id: 4,
+        id: 16,
         title: 'Classic Tune',
         name: 'Tomar Jonno',
         price: '$11',
@@ -30,7 +30,7 @@ const audioData: AudioItem[] = [
         audio: '/images/home-page/audio-2.mp3',
     },
     {
-        id: 5,
+        id: 17,
         title: 'Pop Hit',
         name: 'Ei Mon Tomake',
         price: '$9',
@@ -38,7 +38,7 @@ const audioData: AudioItem[] = [
         audio: '/images/home-page/trending-img/audio-3.mp3',
     },
     {
-        id: 6,
+        id: 18,
         title: 'Jazz Flow',
         name: 'Hridoyer Kotha',
         price: '$13',
@@ -46,7 +46,7 @@ const audioData: AudioItem[] = [
         audio: '/images/home-page/audio-4.mp3',
     },
     {
-        id: 5,
+        id: 19,
         title: 'Pop Hit',
         name: 'Ei Mon Tomake',
         price: '$9',
@@ -54,7 +54,7 @@ const audioData: AudioItem[] = [
         audio: '/images/home-page/trending-img/audio-3.mp3',
     },
     {
-        id: 6,
+        id: 20,
         title: 'Jazz Flow',
         name: 'Hridoyer Kotha',
         price: '$13',

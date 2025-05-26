@@ -17,7 +17,7 @@ const TopTenVocal: React.FC = () => {
     const [visibleData, setVisibleData] = useState<number>(10);
     const audioData: AudioItem[] = [
         {
-            id: 3,
+            id: 1,
             title: 'Rock Anthem',
             name: 'Bujhina Toh Tai',
             price: '€8',
@@ -26,7 +26,7 @@ const TopTenVocal: React.FC = () => {
 
         },
         {
-            id: 4,
+            id: 2,
             title: 'Classic Tune',
             name: 'Tomar Jonno',
             price: '€11',
@@ -34,77 +34,15 @@ const TopTenVocal: React.FC = () => {
             audio: '/images/home-page/audio-2.mp3',
         },
         {
-            id: 5,
+            id: 3,
             title: 'Pop Hit',
             name: 'Ei Mon Tomake',
             price: '€9',
             img: '/images/home-page/slide-4.png',
             audio: '/images/home-page/audio-3.mp3',
         },
-        {
-            id: 6,
-            title: 'Jazz Flow',
-            name: 'Hridoyer Kotha',
-            price: '€13',
-            img: '/images/home-page/slide-4.png',
-            audio: '/images/home-page/audio-4.mp3',
-        },
-        {
-            id: 6,
-            title: 'Jazz Flow',
-            name: 'Hridoyer Kotha',
-            price: '€13',
-            img: '/images/home-page/slide-4.png',
-            audio: '/images/home-page/audio-4.mp3',
-        },
-        {
-            id: 6,
-            title: 'Jazz Flow',
-            name: 'Hridoyer Kotha',
-            price: '€13',
-            img: '/images/home-page/slide-4.png',
-            audio: '/images/home-page/audio-4.mp3',
-        },
-        {
-            id: 6,
-            title: 'Jazz Flow',
-            name: 'Hridoyer Kotha',
-            price: '€13',
-            img: '/images/home-page/slide-4.png',
-            audio: '/images/home-page/audio-4.mp3',
-        },
-        {
-            id: 6,
-            title: 'Jazz Flow',
-            name: 'Hridoyer Kotha',
-            price: '€13',
-            img: '/images/home-page/slide-4.png',
-            audio: '/images/home-page/audio-4.mp3',
-        },
-        {
-            id: 6,
-            title: 'Jazz Flow',
-            name: 'Hridoyer Kotha',
-            price: '€13',
-            img: '/images/home-page/slide-4.png',
-            audio: '/images/home-page/audio-4.mp3',
-        },
-        {
-            id: 6,
-            title: 'Jazz Flow',
-            name: 'Hridoyer Kotha',
-            price: '€13',
-            img: '/images/home-page/slide-4.png',
-            audio: '/images/home-page/audio-4.mp3',
-        },
-        {
-            id: 6,
-            title: 'Jazz Flow',
-            name: 'Hridoyer Kotha',
-            price: '€13',
-            img: '/images/home-page/slide-4.png',
-            audio: '/images/home-page/audio-4.mp3',
-        },
+        
+
 
     ];
     const audioRef = useRef<HTMLAudioElement | null>(null);

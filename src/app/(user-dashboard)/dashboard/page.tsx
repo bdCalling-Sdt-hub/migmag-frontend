@@ -1,4 +1,3 @@
-import Footer from '@/components/footer/Footer'
 import UserDashboard from '@/pages/user-dashboard/UserDashboard'
 import React from 'react'
 
