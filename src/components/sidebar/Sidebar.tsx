@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { HiMenu, HiX } from "react-icons/hi";
 
@@ -22,11 +22,17 @@ const Sidebar: React.FC = () => {
         setIsOpen(false);
     };
 
+    const router = useRouter();
+
+    const handleSignOut = () => {
+        router.push("/")
+    }
+
     return (
         <>
             {/* Hamburger button - visible only on mobile */}
             <button
-                className="fixed top-20 left-4 z-50 2xl:hidden p-2 rounded-md text-white bg-gray-800"
+                className="fixed top-20 left-4 z-50 2xl:hidden p-2 cursor-pointer rounded-md text-white bg-gray-800"
                 onClick={() => setIsOpen(true)}
                 aria-label="Open sidebar menu"
             >
@@ -36,7 +42,7 @@ const Sidebar: React.FC = () => {
             {/* Overlay when sidebar is open on mobile */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-black bg-opacity-50 z-40 2xl:hidden"
+                    className="fixed inset-0 cursor-pointer bg-black bg-opacity-50 z-40 2xl:hidden"
                     onClick={() => setIsOpen(false)}
                 />
             )}
@@ -57,7 +63,7 @@ const Sidebar: React.FC = () => {
                         Jenny!
                     </h2>
                     <button
-                        className="p-2 rounded-md text-white bg-gray-800"
+                        className="p-2 rounded-md cursor-pointer text-white bg-gray-800"
                         onClick={() => setIsOpen(false)}
                         aria-label="Close sidebar menu"
                     >
@@ -113,7 +119,7 @@ const Sidebar: React.FC = () => {
                 <div className="text-center mt-auto">
                     <div className="w-[104px] h-[104px] mx-auto rounded-full bg-white mb-2" />
                     <p className="font-medium text-lg">Jenny Drake</p>
-                    <p className="text-sm text-[#818080] mt-1 cursor-pointer hover:underline">
+                    <p onClick={handleSignOut} className="text-sm text-[#818080] mt-1 cursor-pointer hover:underline">
                         Sign out
                     </p>
                 </div>

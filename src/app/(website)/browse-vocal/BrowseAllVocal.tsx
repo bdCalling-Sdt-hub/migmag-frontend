@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import Image from 'next/image';
 import Link from 'next/link';
+import { toast, Toaster } from 'react-hot-toast';
 
 
 type VocalItem = {
@@ -536,6 +537,12 @@ const BrowseAllVocal = () => {
     const clearSearch = () => {
         setFilter("")
         setSearchTerm("")
+    }
+
+
+    const addToCard = (id: number) => {
+        toast.success('Added to cart successfully');
+        console.log(id)
     }
 
     return (
@@ -1114,7 +1121,7 @@ const BrowseAllVocal = () => {
                                     </h1>
                                 </td>
                                 <td className="py-4 px-6">
-                                    <span className="inline-block">
+                                    <span onClick={() => { addToCard(item?.id) }} className="inline-block">
                                         <svg width="22" height="28" viewBox="0 0 22 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M1 1.48486H2.78025C3.88523 1.48486 4.75488 2.65437 4.6628 3.99992L3.8136 16.5249C3.67036 18.5747 4.99019 20.3352 6.66812 20.3352H17.5644C19.0377 20.3352 20.3269 18.8514 20.4394 17.0531L20.9919 7.62161C21.1147 5.53411 19.8255 3.83644 18.1169 3.83644H4.90836" stroke="#E7F056" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
                                             <path d="M15.5797 26.6355C16.2861 26.6355 16.8586 25.9318 16.8586 25.0636C16.8586 24.1954 16.2861 23.4917 15.5797 23.4917C14.8733 23.4917 14.3008 24.1954 14.3008 25.0636C14.3008 25.9318 14.8733 26.6355 15.5797 26.6355Z" stroke="#E7F056" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
@@ -1264,6 +1271,13 @@ const BrowseAllVocal = () => {
                     </div>
                 </div>
             </div>
+
+
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
+
 
 
 

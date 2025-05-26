@@ -109,7 +109,7 @@ const AllVocalMusic: React.FC = () => {
                     <p className="text-[#504E4E] lg:text-lg font-bold">{item.price}</p>
                     <button
                         onClick={() => handleTogglePlay(item.audio)}
-                        className="w-[50px] h-[50px] rounded-full bg-[#000000] flex justify-center items-center absolute lg:top-[40%] md:top-[30%]  top-[37%] right-[40%]"
+                        className=" cursor-pointer w-[50px] h-[50px] rounded-full bg-[#000000] flex justify-center items-center absolute lg:top-[40%] md:top-[30%]  top-[37%] right-[40%]"
                     >
                         {playingUrl === item.audio && isPlaying ? (
                             <CiPause1 className="text-[#E7F056]" />

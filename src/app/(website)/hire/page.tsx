@@ -98,7 +98,7 @@ const Page: React.FC = () => {
                 </Link>
               </div>
 
-              <Link href={"/login"}><button className="bg-white text-black px-6 py-2 rounded-full w-full">
+              <Link href={"/login"}><button className="bg-white cursor-pointer text-black px-6 py-2 rounded-full w-full">
                 Log in
               </button></Link>
             </nav>
@@ -151,7 +151,7 @@ const Page: React.FC = () => {
               <li><Link className={` ${pathname === "/hire" ? "text-[#E7F056]  " : "text-white"}`} href="/hire">Hire</Link></li>
               <li><Link className=' text-white ' href="/cart">Cart (0)</Link></li>
               <li>
-                <Link href={"/login"}><button className="bg-white text-black px-6 py-2 rounded-full w-full">
+                <Link href={"/login"}><button className="bg-white cursor-pointer text-black px-6 py-2 rounded-full w-full">
                   Login
                 </button></Link>
               </li>

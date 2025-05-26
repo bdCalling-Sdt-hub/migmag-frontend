@@ -104,7 +104,7 @@ const Page: React.FC = () => {
                             </div>
 
                             <Link href={"/login"}><button className="bg-white text-black px-6 py-2 rounded-full w-full">
-                                <Link href={"/login"}>Log in</Link>
+                                Log in
                             </button></Link>
                         </nav>
                     </div>
@@ -157,7 +157,7 @@ const Page: React.FC = () => {
                             <li><Link className=' text-white ' href="/cart">Cart (0)</Link></li>
                             <li>
                                 <Link href={"/login"}><button className="bg-white text-black px-6 py-2 rounded-full w-full">
-                                    <Link href={"/login"}>Log in</Link>
+                                    Log in
                                 </button></Link>
                             </li>
                         </ul>
@@ -179,7 +179,7 @@ const Page: React.FC = () => {
 
                     </div>
                     <div className=' mt-5 md:mt-8 lg:mt-16' >
-                        <Link className=' border border-[#FFFFFF] rounded-[17px] p-2 lg:p-4 text-white text-sm md:text-sm lg:text-lg  ' href={"/contact"}>APPLY NOW</Link>
+                        <Link className=' border border-[#FFFFFF] rounded-[17px] p-2 lg:p-4 text-white text-sm md:text-sm lg:text-lg cursor-pointer ' href={"/contact"}>APPLY NOW</Link>
                     </div>
                 </div>
 
@@ -279,20 +279,20 @@ const Page: React.FC = () => {
                                 <div>
                                     <ul className="flex flex-col gap-1">
                                         <li className="text-lg  text-[#000000] font-bold leading-9">TUNEM</li>
-                                        <li><Link className="text-lg  text-[#000000] leading-9" href="">About</Link></li>
-                                        <li><Link className="text-lg  text-[#000000] leading-9" href="">Hire a Singer</Link></li>
-                                        <li><Link className="text-lg  text-[#000000] leading-9" href="">Production</Link></li>
-                                        <li><Link className="text-lg  text-[#000000] leading-9" href="">Courses</Link></li>
-                                        <li><Link className="text-lg  text-[#000000] leading-9" href="">Contact Us</Link></li>
+                                        <li><Link className="text-lg  text-[#000000] leading-9" href="#">About</Link></li>
+                                        <li><Link className="text-lg  text-[#000000] leading-9" href="/artist-library">Hire a Singer</Link></li>
+                                        <li><Link className="text-lg  text-[#000000] leading-9" href="#">Production</Link></li>
+                                        <li><Link className="text-lg  text-[#000000] leading-9" href="#">Courses</Link></li>
+                                        <li><Link className="text-lg  text-[#000000] leading-9" href="/contact">Contact Us</Link></li>
                                     </ul>
                                 </div>
 
                                 <div>
                                     <ul className="flex flex-col gap-1">
                                         <li className="text-lg  text-[#000000] font-bold leading-9">SUPPORT</li>
-                                        <li><Link className="text-lg  text-[#000000] leading-9" href="">Help Centre</Link></li>
-                                        <li><Link className="text-lg  text-[#000000] leading-9" href="">Support</Link></li>
-                                        <li><Link className="text-lg  text-[#000000] leading-9" href="">Refund Policy</Link></li>
+                                        <li><Link className="text-lg  text-[#000000] leading-9" href="#">Help Centre</Link></li>
+                                        <li><Link className="text-lg  text-[#000000] leading-9" href="/contact">Support</Link></li>
+                                        <li><Link className="text-lg  text-[#000000] leading-9" href="#">Refund Policy</Link></li>
                                     </ul>
                                 </div>
 

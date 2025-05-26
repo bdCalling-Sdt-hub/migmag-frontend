@@ -19,7 +19,7 @@ const ArtistLibraryBanner = () => {
                         </div>
                         
                         <div className=' flex gap-3.5 lg:gap-12 items-center mb-6 lg:mt-20 mt-8 ' >
-                            <Link href={"/contact"}><button className=' text-[#E7F056] text-lg border border-[#E7F056] rounded-2xl px-7 py-2  ' >CONTACT US</button></Link>
+                            <Link className=' cursor-pointer ' href={"/contact"}><button className=' cursor-pointer text-[#E7F056] text-lg border border-[#E7F056] rounded-2xl px-7 py-2  ' >CONTACT US</button></Link>
                         </div>
                     </div>
                     {/* right side  */}

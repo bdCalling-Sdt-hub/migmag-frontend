@@ -5,6 +5,7 @@ import { FaPlay, FaPause, FaStepBackward, FaStepForward, FaShoppingCart } from '
 import WaveSurfer from 'wavesurfer.js';
 import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Track {
     id: number;
@@ -300,7 +301,9 @@ const CartPage = () => {
 
 
                                 <div>
-                                    <FaShoppingCart size={24} className="text-yellow-300 cursor-pointer" />
+                                    <Link href={`/checkout`}>
+                                        <FaShoppingCart size={24} className="text-yellow-300 cursor-pointer" />
+                                    </Link>
                                 </div>
 
                                 {/* Price + Cart */}
@@ -345,7 +348,7 @@ const CartPage = () => {
                                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${licenseColors[track.license]}`}>
                                         {track.license}
                                     </span>
-                                    <span><FaShoppingCart size={24} className="text-yellow-300 cursor-pointer" /></span>
+                                    <Link href={``}><span><FaShoppingCart size={24} className="text-yellow-300 cursor-pointer" /></span></Link>
                                     <span className="bg-yellow-300 text-black font-bold px-4 py-1 rounded-full">
                                         €{track.price}
                                     </span>

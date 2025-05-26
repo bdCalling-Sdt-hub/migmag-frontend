@@ -115,7 +115,7 @@ const AllVocal: React.FC = () => {
             </div>
             <button
               onClick={() => handleTogglePlay(item.audio)}
-              className={`w-[50px] h-[50px] rounded-full flex justify-center items-center border ${isActive ? 'border-[#E7F056]' : 'border-black'
+              className={` cursor-pointer w-[50px] h-[50px] rounded-full flex justify-center items-center border ${isActive ? 'border-[#E7F056]' : 'border-black'
                 }`}
             >
               {isActive ? (

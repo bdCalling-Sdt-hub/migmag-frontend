@@ -90,7 +90,7 @@ const TopTenVocal: React.FC = () => {
                         <div
                             key={item.id}
                             className={`:h-32 flex flex-col gap-y-2 lg:py-2  py-3 lg:flex-row items-center px-10 justify-between border 
-                                -black my-2 rounded-lg max-w-[713px] transition-all duration-300
+                                -black my-2 rounded-lg max-w-[713px] transition-all duration-300 cursor-pointer
                             ${playingUrl === item.audio && isPlaying
                                     ? 'bg-black'
                                     : i % 2 === 0
@@ -116,7 +116,7 @@ const TopTenVocal: React.FC = () => {
                             </div>
                             <button
                                 onClick={() => handleTogglePlay(item.audio)}
-                                className={`w-[50px] h-[50px] rounded-full  flex  justify-center items-center self-center1 ${playingUrl === item.audio && isPlaying ? ' border border-[#E7F056] ' : ' border border-black '} `}
+                                className={`w-[50px] h-[50px] rounded-full cursor-pointer  flex  justify-center items-center self-center1 ${playingUrl === item.audio && isPlaying ? ' border border-[#E7F056] ' : ' border border-black '} `}
                             >
                                 {playingUrl === item.audio && isPlaying ? (
                                     <CiPause1 className="text-[#E7F056] text-2xl" />

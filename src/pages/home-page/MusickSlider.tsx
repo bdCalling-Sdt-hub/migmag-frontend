@@ -208,7 +208,7 @@ export default function MusickSlider() {
                                         ? handlePause()
                                         : handleTogglePlay(item.audio)
                                 }
-                                className="w-[50px] h-[50px] rounded-full bg-[#000000] flex justify-center items-center absolute inset-0 m-auto z-10"
+                                className="w-[50px] h-[50px] cursor-pointer rounded-full bg-[#000000] flex justify-center items-center absolute inset-0 m-auto z-10"
                             >
                                 {playingUrl === item.audio && isPlaying ? (
                                     <CiPause1 className="text-[#E7F056]" size={24} />

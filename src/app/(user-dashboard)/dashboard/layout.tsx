@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 import Sidebar from "@/components/sidebar/Sidebar";
+import Footer from '@/components/footer/Footer';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -28,7 +29,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
     }, [pathname])
     return (
         <div className=' bg-[#222222] z-50 ' >
-            <main className="w-full bg-[#222222] border border-black min-h-screen relative">
+            <main className="w-full bg-[#222222]  min-h-screen relative">
                 <div className=' fixed top-0 w-full  py-8 ' >
                     <div className='flex items-center justify-between  max-w-[1749px]  mx-auto px-4'>
                         {/* Logo */}
@@ -57,7 +58,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                         {/* Mobile Menu Button */}
                         <div className="2xl:hidden">
                             <button onClick={toggleDrawer}>
-                                <FiMenu className=' text-white ' size={23} />
+                                <FiMenu className=' text-black cursor-pointer ' size={23} />
                             </button>
                         </div>
 
@@ -132,7 +133,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
                                 </Link>
                             </span>
-                            <button onClick={toggleDrawer}>
+                            <button className=' cursor-pointer ' onClick={toggleDrawer}>
                                 <FiX size={24} />
                             </button>
                         </div>
@@ -159,6 +160,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
                 {/* On mobile, Sidebar handles its own fixed positioning and toggle */}
             </main>
+            {/* <div className=' bg-white pt-8 ' >
+                <Footer></Footer>
+            </div> */}
 
         </div>
     );

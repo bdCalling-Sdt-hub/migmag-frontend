@@ -114,12 +114,12 @@ const ApplayVocalistFrom: React.FC = () => {
                                 </h3>
                                 <div className='flex flex-wrap gap-6  '>
                                     {genres.map((genre, index) => (
-                                        <div key={index} className='flex items-center gap-2'>
+                                        <div key={index} className='flex items-center gap-2 cursor-pointer '>
                                             <input
                                                 type='checkbox'
                                                 id={genre}
                                                 name='genre'
-                                                className='appearance-none w-6 h-6 rounded-full border-2 border-white checked:bg-yellow-400 checked:border-yellow-400'
+                                                className='appearance-none cursor-pointer w-6 h-6 rounded-full border-2 border-white checked:bg-yellow-400 checked:border-yellow-400'
                                             />
                                             <label htmlFor={genre} className='text-white cursor-pointer'>
                                                 {genre}
@@ -162,7 +162,7 @@ const ApplayVocalistFrom: React.FC = () => {
 
 
                             <div className=' mt-9 ' >
-                                <button className=' text-center text-lg font-medium bg-[#D9D9D9] w-full py-1.5 rounded-2xl   ' >SEND NOW</button>
+                                <button className=' cursor-pointer text-center text-lg font-medium bg-[#D9D9D9] w-full py-1.5 rounded-2xl   ' >SEND NOW</button>
                             </div>
 
 

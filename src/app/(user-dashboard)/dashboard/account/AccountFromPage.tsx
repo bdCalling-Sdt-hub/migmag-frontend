@@ -103,7 +103,7 @@ const AccountFromPage: React.FC = () => {
 
                 <button
                     type="submit"
-                    className="w-full bg-[#E7F056] text-black font-semibold py-3 mt-10 lg:mt-18 rounded-[40px] transition-all duration-300"
+                    className="w-full bg-[#E7F056] cursor-pointer text-black font-semibold py-3 mt-10 lg:mt-18 rounded-[40px] transition-all duration-300"
                 >
                     Update
                 </button>
