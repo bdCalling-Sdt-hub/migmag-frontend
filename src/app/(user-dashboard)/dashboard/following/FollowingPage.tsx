@@ -2,7 +2,7 @@
 
 
 import { useEffect, useRef, useState, Fragment } from 'react';
-import { FaPlay, FaPause, FaStepBackward, FaStepForward, FaShoppingCart } from 'react-icons/fa';
+import { FaPlay, FaPause, FaStepBackward, FaStepForward } from 'react-icons/fa';
 import WaveSurfer from 'wavesurfer.js';
 import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
@@ -97,11 +97,6 @@ const songs: Song[] = [
 
 const FollowingPage: React.FC = () => {
 
-    const itemsPerPage = 5;
-    const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = Math.ceil(songs.length / itemsPerPage);
-    const start = (currentPage - 1) * itemsPerPage;
-    const currentTracks = songs.slice(start, start + itemsPerPage);
 
     const [selectedTrack, setSelectedTrack] = useState<Song | null>(null);
     const [isOpen, setIsOpen] = useState(false);
@@ -213,9 +208,11 @@ const FollowingPage: React.FC = () => {
                     >
                         <div className="flex items-center  gap-x-5">
                             <div>
-                                <img
+                                <Image
                                     src={song.image}
                                     alt={song.title}
+                                    width={93}
+                                    height={91}
                                     className="object-cover w-[93px] h-[95px] rounded-md"
                                 />
                             </div>
@@ -338,7 +335,7 @@ const FollowingPage: React.FC = () => {
                                                 <div>
                                                     <span>
                                                         <svg width="37" height="33" viewBox="0 0 37 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M19.1105 31.2013C18.5307 31.4059 17.5757 31.4059 16.9959 31.2013C12.0505 29.513 1 22.47 1 10.5327C1 5.2633 5.24625 1 10.4816 1C13.5853 1 16.3308 2.50068 18.0532 4.81992C19.7756 2.50068 22.5382 1 25.6249 1C30.8602 1 35.1064 5.2633 35.1064 10.5327C35.1064 22.47 24.056 29.513 19.1105 31.2013Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                            <path d="M19.1105 31.2013C18.5307 31.4059 17.5757 31.4059 16.9959 31.2013C12.0505 29.513 1 22.47 1 10.5327C1 5.2633 5.24625 1 10.4816 1C13.5853 1 16.3308 2.50068 18.0532 4.81992C19.7756 2.50068 22.5382 1 25.6249 1C30.8602 1 35.1064 5.2633 35.1064 10.5327C35.1064 22.47 24.056 29.513 19.1105 31.2013Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                                         </svg>
 
                                                     </span>

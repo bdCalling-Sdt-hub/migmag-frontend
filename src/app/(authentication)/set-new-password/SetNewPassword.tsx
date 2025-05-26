@@ -1,9 +1,7 @@
 "use client"
 import Image from 'next/image';
-import Link from 'next/link';
 import React, { useState } from 'react'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
-import { FaEnvelope, FaLock, FaUser } from 'react-icons/fa';
 
 const SetNewPassword: React.FC = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -39,7 +37,7 @@ const SetNewPassword: React.FC = () => {
                         <p className=' mt-2 text-[#3A3A3A] text-sm text-center ' >You have to create new password to continue.</p>
                     </div>
                     <div className='' >
-                        <form className='space-y-4 mt-[11%] ' >
+                        <form onSubmit={handleSubmit} className='space-y-4 mt-[11%] ' >
 
 
                             {/* password  */}

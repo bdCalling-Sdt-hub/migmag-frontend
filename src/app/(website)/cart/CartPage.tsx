@@ -276,7 +276,7 @@ const CartPage = () => {
                                 {/* Image + Title/Artist */}
                                 <div className="flex items-start gap-4 w-full lg:w-auto">
                                     <div className="relative w-16 h-16 flex-shrink-0">
-                                        <img src={track.image} alt="cover" className="w-full h-full object-cover rounded-md" />
+                                        <Image width={93} height={91} src={track.image} alt="cover" className="w-full h-full object-cover rounded-md" />
                                         <FaPlay onClick={() => openModal(track)} className="absolute inset-0 m-auto text-yellow-400 w-6 h-6" />
                                     </div>
                                     <div>
@@ -326,7 +326,7 @@ const CartPage = () => {
                                 {/* Image + Title/Artist */}
                                 <div className="">
                                     <div className="relative w-full h-full flex-shrink-0">
-                                        <img src={track.image} alt="cover" className="w-full h-full object-cover rounded-md" />
+                                        <Image width={93} height={91} src={track.image} alt="cover" className="w-full h-full object-cover rounded-md" />
                                         <FaPlay onClick={() => openModal(track)} className="absolute inset-0 m-auto text-yellow-400 w-6 h-6" />
                                     </div>
 
@@ -469,7 +469,7 @@ const CartPage = () => {
                                                     <div>
                                                         <span>
                                                             <svg width="37" height="33" viewBox="0 0 37 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                <path d="M19.1105 31.2013C18.5307 31.4059 17.5757 31.4059 16.9959 31.2013C12.0505 29.513 1 22.47 1 10.5327C1 5.2633 5.24625 1 10.4816 1C13.5853 1 16.3308 2.50068 18.0532 4.81992C19.7756 2.50068 22.5382 1 25.6249 1C30.8602 1 35.1064 5.2633 35.1064 10.5327C35.1064 22.47 24.056 29.513 19.1105 31.2013Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                                <path d="M19.1105 31.2013C18.5307 31.4059 17.5757 31.4059 16.9959 31.2013C12.0505 29.513 1 22.47 1 10.5327C1 5.2633 5.24625 1 10.4816 1C13.5853 1 16.3308 2.50068 18.0532 4.81992C19.7756 2.50068 22.5382 1 25.6249 1C30.8602 1 35.1064 5.2633 35.1064 10.5327C35.1064 22.47 24.056 29.513 19.1105 31.2013Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                                             </svg>
 
                                                         </span>

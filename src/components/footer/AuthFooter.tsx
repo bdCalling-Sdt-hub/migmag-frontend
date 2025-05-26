@@ -10,7 +10,7 @@ const AuthFooter: React.FC = () => {
                     <div className="mx-auto flex justify-center">
                         <span>
                             <svg width="96" height="41" viewBox="0 0 96 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1_2039)">
+                                <g clipPath="url(#clip0_1_2039)">
                                     <path d="M95.9945 9.38879V40.906H69.7846V15.941C69.7846 15.941 61.1104 16.3613 61.1104 31.2684V41.0055H34.84V30.4334C34.2893 16.3613 26.1658 15.941 26.1658 15.941V40.9005H0V9.38326H26.1658C26.1658 9.38326 32.0422 9.38325 34.84 17.0082V0H61.0829V17.0856C63.8091 9.38879 69.7571 9.38879 69.7571 9.38879H95.9945Z" fill="white" />
                                 </g>
                                 <defs>

@@ -132,7 +132,7 @@ const ApplayVocalistFrom: React.FC = () => {
                             {/* other genre  */}
                             <div className='flex flex-col mt-5'>
                                 <label className='text-white text-lg font-bold leading-6' htmlFor="otherGenre">
-                                    If you choose "other", which genre?
+                                    If you choose other, which genre?
                                 </label>
                                 <textarea
                                     id='otherGenre'

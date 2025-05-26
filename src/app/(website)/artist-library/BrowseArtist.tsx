@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react';
-import { ArrowBigDown, ArrowLeft, ArrowRight, Search } from 'lucide-react';
+import { ArrowRight, Search } from 'lucide-react';
 import { motion, AnimatePresence } from "framer-motion";
 import { HiChevronDown, HiChevronUp } from "react-icons/hi";
 import Image from 'next/image';
@@ -158,20 +158,16 @@ const BrowseArtist = () => {
 
     // Genre 
 
-    const genres: string[] = ["Rock", "Pop", "Jazz", "Classical"];
-
+    const genres: string[] = ['Rock', 'Pop', 'Jazz', 'Classical'];
     const [open, setOpen] = useState<boolean>(false);
-    const [selected, setSelected] = useState<string[]>([]);
-    const ref = useRef<HTMLDivElement>(null);
+    const [selectedGenre, setSelectedGenre] = useState<string[]>([]);
 
     function toggleGenre(genre: string): void {
-        let newSelected: string[];
-        if (selected.includes(genre)) {
-            newSelected = selected.filter((g) => g !== genre);
-        } else {
-            newSelected = [...selected, genre];
-        }
-        setSelected(newSelected);
+        setSelectedGenre((prevSelected) =>
+            prevSelected.includes(genre)
+                ? prevSelected.filter((g) => g !== genre)
+                : [...prevSelected, genre]
+        );
     }
 
     useEffect(() => {
@@ -180,10 +176,10 @@ const BrowseArtist = () => {
                 setOpen(false);
             }
         }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
 
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
 
 
@@ -205,7 +201,6 @@ const BrowseArtist = () => {
 
 
 
-    const [direction, setDirection] = useState("asc");
 
 
 
@@ -320,37 +315,35 @@ const BrowseArtist = () => {
 
     // License  start
     const License: string[] = [
-        "Creative Commons",
-        "Royalty Free",
-        "Public Domain",
-        "All Rights Reserved",
+        'Creative Commons',
+        'Royalty Free',
+        'Public Domain',
+        'All Rights Reserved',
     ];
 
     const [selectedLicense, setSelectedLicense] = useState<string[]>([]);
     const [openLicense, setOpenLicense] = useState<boolean>(false);
 
     function toggleLicense(licenseValue: string): void {
-        let newLicense: string[];
-        if (selectedLicense.includes(licenseValue)) {
-            newLicense = selectedLicense.filter((g) => g !== licenseValue);
-            setSelectedLicense((prev) =>
-                prev.includes(licenseValue) ? prev.filter((i) => i !== licenseValue) : [...prev, licenseValue]
-            );
-        } else {
-            newLicense = [...selectedLicense, licenseValue];
-        }
-        setSelectedLicense(newLicense); // ✅ Corrected here
-        setOpenLicense(false); // dropdown close
+
+        setSelectedLicense((prev) =>
+            prev.includes(licenseValue)
+                ? prev.filter((item) => item !== licenseValue)
+                : [...prev, licenseValue]
+        );
     }
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent): void {
-            if (licenseRef.current && !licenseRef.current.contains(event.target as Node)) {
+            if (
+                licenseRef.current &&
+                !licenseRef.current.contains(event.target as Node)
+            ) {
                 setOpenLicense(false);
             }
         }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
 
@@ -709,7 +702,7 @@ const BrowseArtist = () => {
 
                         {/* Only show selected count */}
                         <span className="w-28 text-white md:text-lg ">
-                            {selected.length > 0 ? <>Selected {selected.length}</> : "Genre"}
+                            {selectedGenre.length > 0 ? <>Selected {selectedGenre.length}</> : "Genre"}
                         </span>
                     </button>
 
@@ -730,9 +723,9 @@ const BrowseArtist = () => {
                                     >
                                         <input
                                             type="checkbox"
-                                            checked={selected.includes(genre)}
+                                            checked={selectedGenre.includes(genre)}
                                             onChange={(e) => {
-                                                toggleLicense(genre);
+                                                toggleGenre(genre);
                                                 handleFilterChange('genre', e.target.checked ? genre : '');
                                             }}
                                             className="mr-3 accent-indigo-500 w-5 h-5"
@@ -977,17 +970,12 @@ const BrowseArtist = () => {
                 </div>
 
 
-
-
-
-
-
                 {/* License */}
 
                 <div className="relative md:w-[177px] w-[150px]" ref={licenseRef}>
                     <button
                         type="button"
-                        className="bg-[#201F1F]  relative  text-white px-5 py-3 rounded-2xl w-full text-left cursor-pointer flex items-center gap-2"
+                        className="bg-[#201F1F] relative text-white px-5 py-3 rounded-2xl w-full text-left cursor-pointer flex items-center gap-2"
                         onClick={() => setOpenLicense(!openLicense)}
                     >
                         {openLicense ? (
@@ -995,9 +983,10 @@ const BrowseArtist = () => {
                         ) : (
                             <HiChevronDown className="text-white w-5 h-5 absolute right-2 md:right-7" />
                         )}
-
-                        <span className="w-28 text-white md:text-lg   ">
-                            {selectedLicense.length > 0 ? <>Selected {selectedLicense.length}</> : "License"}
+                        <span className="w-28 text-white md:text-lg">
+                            {selectedLicense.length > 0
+                                ? <>Selected {selectedLicense.length}</>
+                                : 'License'}
                         </span>
                     </button>
 
@@ -1007,9 +996,9 @@ const BrowseArtist = () => {
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -10 }}
-                                transition={{ duration: 0.4, ease: "easeInOut" }}
+                                transition={{ duration: 0.4, ease: 'easeInOut' }}
                                 className="absolute z-10 mt-2 bg-gray-800 rounded-2xl w-full max-h-44 overflow-auto border border-gray-700 shadow-lg"
-                                style={{ top: "calc(100% + 0.5rem)" }}
+                                style={{ top: 'calc(100% + 0.5rem)' }}
                             >
                                 {License.map((license) => (
                                     <label
@@ -1021,11 +1010,14 @@ const BrowseArtist = () => {
                                             checked={selectedLicense.includes(license)}
                                             onChange={(e) => {
                                                 toggleLicense(license);
-                                                handleFilterChange('license', e.target.checked ? license : '');
+                                                handleFilterChange(
+                                                    'license',
+                                                    e.target.checked ? license : ''
+                                                );
                                             }}
                                             className="mr-3 accent-indigo-500 w-5 h-5"
                                         />
-                                        <span className="text-white md:text-lg  ">{license}</span>
+                                        <span className="text-white md:text-lg">{license}</span>
                                     </label>
                                 ))}
                             </motion.div>
@@ -1200,7 +1192,7 @@ const BrowseArtist = () => {
                         <h1 className=' lg:text-3xl text-xl text-[#E7F056] leading-9 font-thin ' >Notify me</h1>
                     </div>
 
-                    {visibleCount < singers.length && (<button  onClick={()=>setVisibleCount(prev=>prev+8)} className=' w-[40%] rounded-2xl border border-white text-white lg:px-6 px-3 py-2 lg:py-3 text-sm lg:text-lg cursor-pointer   ' >LOAD MORE ARTISTS</button>)}
+                    {visibleCount < singers.length && (<button onClick={() => setVisibleCount(prev => prev + 8)} className=' w-[40%] rounded-2xl border border-white text-white lg:px-6 px-3 py-2 lg:py-3 text-sm lg:text-lg cursor-pointer   ' >LOAD MORE ARTISTS</button>)}
 
                 </div>
 

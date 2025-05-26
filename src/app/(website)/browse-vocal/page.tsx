@@ -6,12 +6,10 @@ import { FiMenu, FiX } from 'react-icons/fi'
 import { usePathname } from 'next/navigation'
 import BrowseVocalBanner from './BrowseVocalBanner'
 import BrowseVocalMarque from './BrowseVocalMarque'
-import ArtistLibraryBanner from '../artist-library/ArtistLibraryBanner'
-import MusickSlider from '@/pages/home-page/MusickSlider'
 import BrowseMusickVocalSlider from './BrowseMusickVocalSlider';
 import BrowseAllVocal from './BrowseAllVocal'
 
-const page = () => {
+const Page : React.FC  = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
     const pathname = usePathname();
     console.log(pathname)
@@ -43,7 +41,7 @@ const page = () => {
                         {/* Logo */}
                         <Link className='  ' href="/">
                             <svg width="174" height="22" viewBox="0 0 174 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1_1601)">
+                                <g clipPath="url(#clip0_1_1601)">
                                     <path d="M76.7524 9.06699H68.8924V21.7685H64.7478V9.06699H56.8997V5.5719H76.7524V9.06699Z" fill="white" />
                                     <path d="M88.8754 22.0029C81.7704 22.0029 78.7181 19.297 78.7181 13.6509V5.5719H82.8628V13.648C82.8628 15.9147 83.4845 18.5049 88.8636 18.5049C94.2427 18.5049 94.8673 15.891 94.8673 13.648V5.5719H99.012V13.648C99.0357 19.2704 95.9627 22.0029 88.8754 22.0029Z" fill="white" />
                                     <path d="M122.053 5.5719V21.7685H116.399L105.386 9.62181V21.7685H101.241V5.5719H106.866L117.903 17.7364V5.5719H122.053Z" fill="white" />
@@ -89,10 +87,10 @@ const page = () => {
                                 <Link href="/cart">
                                     <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center" >
                                         <svg width="18" height="23" viewBox="0 0 18 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M1 1.41724H2.4242C3.30818 1.41724 4.0039 2.35284 3.93024 3.42928L3.25088 13.4493C3.13629 15.0891 4.19215 16.4975 5.53449 16.4975H14.2515C15.4302 16.4975 16.4615 15.3104 16.5515 13.8718L16.9935 6.32663C17.0917 4.65663 16.0604 3.2985 14.6935 3.2985H4.12669" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M12.6638 21.5378C13.2288 21.5378 13.6869 20.9748 13.6869 20.2802C13.6869 19.5857 13.2288 19.0227 12.6638 19.0227C12.0987 19.0227 11.6406 19.5857 11.6406 20.2802C11.6406 20.9748 12.0987 21.5378 12.6638 21.5378Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M6.11566 21.5378C6.68072 21.5378 7.13878 20.9748 7.13878 20.2802C7.13878 19.5857 6.68072 19.0227 6.11566 19.0227C5.5506 19.0227 5.09253 19.5857 5.09253 20.2802C5.09253 20.9748 5.5506 21.5378 6.11566 21.5378Z" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M6.72949 7.45337H16.5515" stroke="black" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path d="M1 1.41724H2.4242C3.30818 1.41724 4.0039 2.35284 3.93024 3.42928L3.25088 13.4493C3.13629 15.0891 4.19215 16.4975 5.53449 16.4975H14.2515C15.4302 16.4975 16.4615 15.3104 16.5515 13.8718L16.9935 6.32663C17.0917 4.65663 16.0604 3.2985 14.6935 3.2985H4.12669" stroke="black" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M12.6638 21.5378C13.2288 21.5378 13.6869 20.9748 13.6869 20.2802C13.6869 19.5857 13.2288 19.0227 12.6638 19.0227C12.0987 19.0227 11.6406 19.5857 11.6406 20.2802C11.6406 20.9748 12.0987 21.5378 12.6638 21.5378Z" stroke="black" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M6.11566 21.5378C6.68072 21.5378 7.13878 20.9748 7.13878 20.2802C7.13878 19.5857 6.68072 19.0227 6.11566 19.0227C5.5506 19.0227 5.09253 19.5857 5.09253 20.2802C5.09253 20.9748 5.5506 21.5378 6.11566 21.5378Z" stroke="black" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+                                            <path d="M6.72949 7.45337H16.5515" stroke="black" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
 
                                         <span className="absolute -top-1 -right-1 bg-lime-300 text-black text-xs w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
@@ -102,9 +100,9 @@ const page = () => {
                                 </Link>
                             </div>
 
-                            <Link href={"/login"}><button className="bg-white text-black px-6 py-2 rounded-full w-full">
+                            <button className="bg-black text-white px-6 py-2 cursor-pointer rounded-full font-medium hover:bg-gray-900">
                                 <Link href={"/login"}>Log in</Link>
-                            </button></Link>
+                            </button>
                         </nav>
                     </div>
 
@@ -119,7 +117,7 @@ const page = () => {
                             <span className="text-lg font-bold">
                                 <Link href="/">
                                     <svg width="174" height="22" viewBox="0 0 174 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clip-path="url(#clip0_5_567)">
+                                        <g clipPath="url(#clip0_5_567)">
                                             <path d="M76.7524 9.06705H68.8925V21.7686H64.7479V9.06705H56.8997V5.57196H76.7524V9.06705Z" fill="black" />
                                             <path d="M88.8754 22.003C81.7704 22.003 78.7181 19.2971 78.7181 13.651V5.57196H82.8628V13.648C82.8628 15.9148 83.4845 18.5049 88.8636 18.5049C94.2427 18.5049 94.8673 15.8911 94.8673 13.648V5.57196H99.012V13.648C99.0357 19.2704 95.9627 22.003 88.8754 22.003Z" fill="black" />
                                             <path d="M122.053 5.57196V21.7686H116.399L105.386 9.62187V21.7686H101.241V5.57196H106.866L117.903 17.7365V5.57196H122.053Z" fill="black" />
@@ -155,9 +153,9 @@ const page = () => {
                             <li><Link className={` ${pathname === "/hire" ? "text-[#E7F056]  " : "text-white"}`} href="/hire">Hire</Link></li>
                             <li><Link className=' text-white ' href="/cart">Cart (0)</Link></li>
                             <li>
-                                <Link href={"/login"}><button className="bg-white text-black px-6 py-2 rounded-full w-full">
+                                <button className="bg-white text-black px-6 py-2 rounded-full w-full">
                                     <Link href={"/login"}>Log in</Link>
-                                </button></Link>
+                                </button>
                             </li>
                         </ul>
                     </div>
@@ -183,14 +181,14 @@ const page = () => {
                 <BrowseVocalBanner />
             </div>
             <div>
-                <BrowseVocalMarque/>
+                <BrowseVocalMarque />
             </div>
 
             <div>
-                <BrowseMusickVocalSlider/>
+                <BrowseMusickVocalSlider />
             </div>
             <div className=' pb-12 ' >
-                <BrowseAllVocal/>
+                <BrowseAllVocal />
             </div>
 
 
@@ -205,7 +203,7 @@ const page = () => {
                     <div className="mx-auto flex justify-center">
                         <span>
                             <svg width="96" height="41" viewBox="0 0 96 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1_2039)">
+                                <g clipPath="url(#clip0_1_2039)">
                                     <path d="M95.9945 9.38879V40.906H69.7846V15.941C69.7846 15.941 61.1104 16.3613 61.1104 31.2684V41.0055H34.84V30.4334C34.2893 16.3613 26.1658 15.941 26.1658 15.941V40.9005H0V9.38326H26.1658C26.1658 9.38326 32.0422 9.38325 34.84 17.0082V0H61.0829V17.0856C63.8091 9.38879 69.7571 9.38879 69.7571 9.38879H95.9945Z" fill="white" />
                                 </g>
                                 <defs>
@@ -285,7 +283,7 @@ const page = () => {
                             <div>
                                 <ul className="flex flex-col gap-1">
                                     <li className="text-lg  text-[#FFFFFF] font-bold leading-9">SUPPORT</li>
-                                    <li><Link className="text-lg  text-[#FFFFFF] leading-9"  href="#">Help Centre</Link></li>
+                                    <li><Link className="text-lg  text-[#FFFFFF] leading-9" href="#">Help Centre</Link></li>
                                     <li><Link className="text-lg  text-[#FFFFFF] leading-9" href="/contact">Support</Link></li>
                                     <li><Link className="text-lg  text-[#FFFFFF] leading-9" href="#">Refund Policy</Link></li>
                                 </ul>
@@ -306,4 +304,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page 

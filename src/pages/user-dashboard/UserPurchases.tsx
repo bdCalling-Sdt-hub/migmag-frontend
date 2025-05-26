@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, {  } from 'react';
 import { FiDownload } from 'react-icons/fi';
 
 interface Purchase {
@@ -48,17 +48,17 @@ const initialPurchases: Purchase[] = [
 ];
 
 const PurchasesTable = () => {
-    const [purchases, setPurchases] = useState(initialPurchases);
+    // const [purchases, setPurchases] = useState(initialPurchases);
 
-    const toggleDownload = (index: number) => {
-        const updated = [...purchases];
-        updated[index].downloadable = !updated[index].downloadable;
-        setPurchases(updated);
+    // const toggleDownload = (index: number) => {
+    //     const updated = [...purchases];
+    //     updated[index].downloadable = !updated[index].downloadable;
+    //     setPurchases(updated);
 
-        if (updated[index].downloadable) {
-            downloadContract(updated[index].contractUrl, updated[index].contract);
-        }
-    };
+    //     if (updated[index].downloadable) {
+    //         downloadContract(updated[index].contractUrl, updated[index].contract);
+    //     }
+    // };
 
     const downloadContract = (url: string, filename: string) => {
         const link = document.createElement('a');
@@ -83,7 +83,7 @@ const PurchasesTable = () => {
                         </tr>
                     </thead>
                     <tbody className="text-sm  ">
-                        {purchases.map((item, index) => (
+                        {initialPurchases.map((item, index) => (
                             <tr key={index} className="border-b border-[#333] ">
                                 <td className="py-4 text-[#FFFFFF] font-bold leading-6 text-xs lg:text-[16px] underline">
                                     {item.title}
