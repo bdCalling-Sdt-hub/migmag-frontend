@@ -12,7 +12,7 @@ const ApplayVocalistFrom: React.FC = () => {
     ];
     return (
         <div className=' bg-black  ' >
-            <div className=' max-w-[1366px] mx-auto py-8 lg:py-[60px] px-4 ' >
+            <div style={{ fontFamily: 'Favorit' }} className=' max-w-[1366px] mx-auto py-8 lg:py-[60px] px-4 ' >
                 <div className=' flex lg:flex-row flex-col items-start gap-y-8 lg:gap-y-0 relative lg:gap-5 ' >
                     <div>
                         <p className=' lg:rotate-90 text-[#fff] lg:text-lg lg:absolute lg:top-14 lg:-ml-20   ' >JUST FOR YOU</p>

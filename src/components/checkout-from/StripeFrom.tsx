@@ -32,7 +32,7 @@ export default function StripeFrom() {
         <div style={{ fontFamily: 'Favorit' }} className="p-8">
             {clientSecret && (
                 <Elements options={options} stripe={stripePromise}>
-                    <CheckoutForm clientSecret = {clientSecret}  />
+                    <CheckoutForm clientSecret={clientSecret} />
                 </Elements>
             )}
         </div>
