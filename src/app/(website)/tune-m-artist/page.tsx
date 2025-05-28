@@ -10,6 +10,7 @@ import ApplayVocalistFrom from './ApplayVocalistFrom'
 import CoreValue from './CoreValue'
 import ManageTune from './ManageTune'
 import Link from 'next/link'
+import Faq from './Faq'
 const Page: React.FC = () => {
     const [drawerOpen, setDrawerOpen] = useState(false)
     const pathname = usePathname();
@@ -39,7 +40,7 @@ const Page: React.FC = () => {
             <div
                 className="bg-gradient-to-r from-black/10 to-transparent  bg-[url('/images/tune/tuneBanner/tune-bannerImg.jpg')] bg-cover object-cover bg-center w-full pb-6 md:pb-12 lg:pb-28 "
             >
-                <div className=" max-w-[1539px] mx-auto   bg-opacity-90 ">
+                <div style={{ fontFamily: 'Favorit' }} className=" max-w-[1539px] mx-auto   bg-opacity-90 ">
                     <div className='flex items-center justify-between h-16 max-w-[1549px] pt-12 mx-auto px-4'>
                         {/* Logo */}
                         <Link className='  ' href="/">
@@ -166,9 +167,9 @@ const Page: React.FC = () => {
 
                 {/* website content  */}
 
-                <div className=' max-w-[1539px] mx-auto px-4 lg:mt-32  ' >
+                <div style={{ fontFamily: 'Favorit' }} className=' max-w-[1539px] mx-auto px-4 lg:mt-32  ' >
                     <div className=' max-w-[631px] ' >
-                        <h1 className=' lg:text-[85px] text-3xl md:text-5xl mt-4 md:mt-8 lg:leading-24 text-[#fff] ' >
+                        <h1 style={{ fontFamily: 'Bayon' }} className=' lg:text-[85px] text-3xl md:text-5xl mt-4 md:mt-8 lg:leading-24 text-[#fff] ' >
                             start your journey into the music industry with us.
                         </h1>
 
@@ -192,6 +193,7 @@ const Page: React.FC = () => {
             <ApplayVocalistFrom></ApplayVocalistFrom>
             <CoreValue></CoreValue>
             <ManageTune  ></ManageTune>
+            <Faq></Faq>
 
 
 
@@ -204,7 +206,7 @@ const Page: React.FC = () => {
 
             {/* footer */}
             <div className=' ' >
-                <div className='max-w-[1549px] mx-auto px-4' >
+                <div style={{ fontFamily: 'Favorit' }} className='max-w-[1549px] mx-auto px-4' >
                     <div className="max-w-[1539px] mx-auto">
                         {/* Logo */}
                         <div className="mx-auto flex justify-center">

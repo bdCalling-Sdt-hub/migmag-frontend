@@ -27,7 +27,7 @@ const ManageTune: React.FC = () => {
     ]
     return (
         <div>
-            <div className="pt-20 pb-28 max-w-[1427px] mx-auto px-4">
+            <div style={{ fontFamily: 'Favorit' }} className="lg:pt-20 lg:pb-28 max-w-[1427px] mx-auto px-4">
                 <h1 className="text-center text-[35px] font-bold leading-9">
                     Who manages TuneM?
                 </h1>

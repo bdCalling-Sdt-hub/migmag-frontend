@@ -3,7 +3,7 @@ import React from 'react'
 
 const ApplayTune: React.FC = () => {
     return (
-        <div className=' px-4 max-w-[1466px] mx-auto mb-[83px] ' >
+        <div style={{ fontFamily: 'Favorit' }} className=' px-4 max-w-[1466px] mx-auto mb-[83px] ' >
             <div className=' flex lg:flex-row-reverse flex-col items-center justify-between relative lg:gap-5 lg:mt-40 ' >
 
                 {/* left side  */}

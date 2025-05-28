@@ -49,17 +49,17 @@ const BrowseAllVocal = () => {
     const genres: string[] = ["Rock", "Pop", "Jazz", "Classical"];
 
     const [open, setOpen] = useState<boolean>(false);
-    const [selected, setSelected] = useState<string[]>([]);
+    const [selectGenre, setSelectGenre] = useState<string[]>([]);
 
-    // function toggleGenre(genre: string): void {
-    //     let newSelected: string[];
-    //     if (selected.includes(genre)) {
-    //         newSelected = selected.filter((g) => g !== genre);
-    //     } else {
-    //         newSelected = [...selected, genre];
-    //     }
-    //     setSelected(newSelected);
-    // }
+    function toggleGenre(genre: string): void {
+        let newselectGenre: string[];
+        if (selectGenre.includes(genre)) {
+            newselectGenre = selectGenre.filter((g) => g !== genre);
+        } else {
+            newselectGenre = [...selectGenre, genre];
+        }
+        setSelectGenre(newselectGenre);
+    }
 
     useEffect(() => {
         function handleClickOutside(event: MouseEvent): void {
@@ -605,7 +605,7 @@ const BrowseAllVocal = () => {
 
                             {/* Only show selected count */}
                             <span className="w-28 text-white md:text-lg ">
-                                {selected.length > 0 ? <>Selected {selected.length}</> : "Genre"}
+                                {selectGenre.length > 0 ? <>Selected {selectGenre.length}</> : "Genre"}
                             </span>
                         </button>
 
@@ -626,9 +626,9 @@ const BrowseAllVocal = () => {
                                         >
                                             <input
                                                 type="checkbox"
-                                                checked={selected.includes(genre)}
+                                                checked={selectGenre.includes(genre)}
                                                 onChange={(e) => {
-                                                    toggleLicense(genre);
+                                                    toggleGenre(genre);
                                                     handleFilterChange('genre', e.target.checked ? genre : '');
                                                 }}
                                                 className="mr-3 accent-indigo-500 w-5 h-5"
@@ -1080,7 +1080,7 @@ const BrowseAllVocal = () => {
                                                 height={80}
                                                 className="w-full h-full rounded-lg object-cover"
                                             />
-                                            <span onClick={()=>{handleOpenModal(item.id)}} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <span onClick={() => { handleOpenModal(item.id) }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                                                 <svg
                                                     width="52"
                                                     height="52"
@@ -1171,24 +1171,29 @@ const BrowseAllVocal = () => {
                 </div>
 
 
-                <div className='  flex flex-col lg:flex-row   space-y-5 justify-between items-center  ' >
-                    <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-6 lg:pb-14 rounded-md ' >
-                        <h1 className=' lg:pt-44 pt-7 text-3xl leading-9 text-white font-bold ' >100% Royalty free</h1>
-                        <div className=' max-w-[381px]  mt-6 text-lg leading-6 text-white ' >
-                            <p>Use your vocals anywhere. No limits. Cleared for release. Keep all royalties.</p>
-                        </div>
+                <div className="flex flex-col lg:flex-row justify-between items-stretch gap-5">
+                    {/* Box 1 */}
+                    <div className="bg-[#201F1F] p-6 lg:pt-44 rounded-md text-white max-w-full lg:max-w-[32%]">
+                        <h1 className="text-3xl font-bold leading-9">100% Royalty free</h1>
+                        <p className="mt-6 text-lg leading-6">
+                            Use your vocals anywhere. No limits. Cleared for release. Keep all royalties.
+                        </p>
                     </div>
-                    <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-6 lg:pb-14 rounded-md ' >
-                        <h1 className=' lg:pt-44 pt-7 text-3xl leading-9 text-white font-bold ' >Yours forever</h1>
-                        <div className=' max-w-[381px]  mt-6 text-lg leading-6 text-white ' >
-                            <p>Dry vocal stems, Licence and Invoice emailed after purchase. Instrumental at an extra cost. </p>
-                        </div>
+
+                    {/* Box 2 */}
+                    <div className="bg-[#201F1F] p-6 lg:pt-44 rounded-md text-white max-w-full lg:max-w-[32%]">
+                        <h1 className="text-3xl font-bold leading-9">Yours forever</h1>
+                        <p className="mt-6 text-lg leading-6">
+                            Dry vocal stems, Licence and Invoice emailed after purchase. Instrumental at an extra cost.
+                        </p>
                     </div>
-                    <div className=' bg-[#201F1F] pl-2.5 pr-20 pb-6 lg:pb-14 rounded-md ' >
-                        <h1 className=' lg:pt-44 pt-7 text-3xl leading-9 text-white font-bold ' >Vocal love gurantee</h1>
-                        <div className=' max-w-[381px]  mt-6 text-lg leading-6 text-white ' >
-                            <p>Don’t love your existing vocal. We’ll replace it with a new one!</p>
-                        </div>
+
+                    {/* Box 3 */}
+                    <div className="bg-[#201F1F]  p-6 lg:pt-44 rounded-md text-white max-w-full lg:max-w-[32%]">
+                        <h1 className="text-3xl font-bold leading-9">Vocal love guarantee</h1>
+                        <p className="mt-6 text-lg leading-6">
+                            Don’t love your existing vocal? We’ll replace it with a new one!
+                        </p>
                     </div>
                 </div>
 

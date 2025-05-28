@@ -4,7 +4,7 @@ import React from 'react'
 const CoreValue: React.FC = () => {
     return (
         <>
-            <div className=' max-w-[1426px] mx-auto px-4 lg:py-20 py-4  ' >
+            <div style={{ fontFamily: 'Favorit' }} className=' max-w-[1426px] mx-auto px-4 lg:py-20 py-4  ' >
                 <h1 className=' text-[#000000] text-lg lg:text-[35px] font-bold leading-9 text-center ' >Our core values</h1>
                 <div className=' grid lg:grid-cols-3 md:grid-cols-2 gap-4 lg:gap-8 mt-5 lg:mt-20 ' >
                     <div className=' max-w-[390px] ' >
@@ -56,7 +56,7 @@ const CoreValue: React.FC = () => {
 
 
             <div className=' max-w-[1547px] mx-auto ' >
-                <div
+                <div style={{ fontFamily: 'Favorit' }}
                     className="bg-[url('/images/home-page/tunemImg.png')] bg-no-repeat bg-cover bg-center py-6 lg:pt-11 lg:pb-16 rounded-lg mt-16 lg:mt-[107px] relative overflow-hidden"
                 >
                     {/* Gradient Overlay */}
@@ -67,7 +67,7 @@ const CoreValue: React.FC = () => {
                             TUNEM FOR ARTISTS
                         </h1>
                         <div className="mx-auto mt-5 lg:mt-16">
-                            <h1 className="text-center lg:text-7xl text-3xl text-white font-thin">
+                            <h1 style={{ fontFamily: 'Bayon' }} className="text-center lg:text-7xl text-3xl text-white font-thin">
                                 GROW YOUR <br />
                                 REACH & AUDIENCE
                             </h1>

@@ -49,7 +49,7 @@ const ArtistSlider: React.FC = () => {
 
     return (
         <>
-            <div className="max-w-[1588px] lg:block hidden mt-24 mb-28 mx-auto relative px-4">
+            <div style={{ fontFamily: 'Favorit' }} className="max-w-[1588px] lg:block hidden mt-24 mb-28 mx-auto relative px-4">
                 {/* Custom Arrows */}
                 <button
                     onClick={handlePrev}
